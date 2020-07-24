@@ -30,6 +30,10 @@ export default function PageContainer ({ children }) {
             text-rendering: optimizeSpeed;
           }
 
+          a {
+            transition: color 0.2s ease;
+          }
+
           /* Remove all animations and transitions for people that prefer not to see them */
           @media (prefers-reduced-motion: reduce) {
             * {

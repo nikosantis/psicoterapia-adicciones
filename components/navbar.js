@@ -16,24 +16,13 @@ export default function Navbar () {
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item active'>
-              <a className='nav-link' href='#'>Home <span className='sr-only'>(current)</span></a>
+              <a className='nav-link' href='#'>Inicio <span className='sr-only'>(current)</span></a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='#'>Link</a>
-            </li>
-            <li className='nav-item dropdown'>
-              <a className='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                Dropdown
-              </a>
-              <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-                <a className='dropdown-item' href='#'>Action</a>
-                <a className='dropdown-item' href='#'>Another action</a>
-                <div className='dropdown-divider' />
-                <a className='dropdown-item' href='#'>Something else here</a>
-              </div>
+              <a className='nav-link' href='#'>Sobre el Diplomado</a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link disabled' href='#' tabIndex='-1' aria-disabled='true'>Disabled</a>
+              <a className='nav-link' href='#'>Contacto</a>
             </li>
           </ul>
         </div>
@@ -42,7 +31,13 @@ export default function Navbar () {
       <style jsx>
         {`
           .logo {
-            width: 300px;
+            width: 200px;
+          }
+
+          @media (min-width: 992px) {
+            .logo {
+              width: 300px;
+            }
           }
         `}
       </style>

@@ -11,5 +11,6 @@ export default css.global`
     --casper-background: #fff;
     --casper-foreground: #5C7380;
     --casper-intro-bg: #ccc;
+    --casper-footer-background: #394049;
   }
 `
