@@ -1,3 +1,5 @@
+import IntroContent from './intro-content'
+
 export default function Intro () {
   return (
     <section className='intro'>
@@ -15,6 +17,8 @@ export default function Intro () {
             <p>Manejar una epistemología y una metodología basadas en la subjetividad del ser humano. Modelo clínico propuesto por la Unidad de Adicciones de la Facultad de Ciencias Médicas Usach.</p>
           </div>
         </div>
+
+        <IntroContent />
       </div>
       <style jsx>
         {`

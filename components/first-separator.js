@@ -7,7 +7,7 @@ export default function FirstSeparator () {
         <div className='row justify-content-center'>
           <div className='col-lg-9 col-12'>
             <div className='quote-left'>
-              <FaQuoteLeft fontSize='30' />
+              <FaQuoteLeft fontSize='30' color='var(--casper-orange)' />
             </div>
             <div>
               <p>
@@ -16,7 +16,7 @@ export default function FirstSeparator () {
               </p>
             </div>
             <div className='quote-right'>
-              <FaQuoteRight fontSize='30' />
+              <FaQuoteRight fontSize='30' color='var(--casper-orange)' />
             </div>
           </div>
         </div>

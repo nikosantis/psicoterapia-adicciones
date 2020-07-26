@@ -45,7 +45,7 @@ export default function Hero () {
           <div className='col-lg-6 box-r'>
             <div className='intro-box'>
               <div className='intro-box-text'>
-                <span className='intro-box-left'>Inicio SEP 2020 / </span>
+                <span className='intro-box-left'>Inicio SEP 2020 /</span>
                 <span className='intro-box-right'>100% Online</span>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function Hero () {
             text-align: center;
 
             @media (min-width: 992px) {
-              margin-top: 100px;
+              margin-top: 80px;
               text-align: left;
             }
           }
@@ -233,6 +233,7 @@ export default function Hero () {
 
             @media (min-width: 992px) {
               font-size: 2rem;
+              margin-left: 5px;
             }
           }
         `}
