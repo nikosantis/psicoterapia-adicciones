@@ -3,8 +3,8 @@ import { MdLaptopMac } from 'react-icons/md'
 
 export default function IntroContent () {
   return (
-    <div className='row mt-5'>
-      <div className='col-lg-3'>
+    <div className='row mt-5 justify-content-center'>
+      <div className='col-lg-3 col-md-3 col-10 mb-5 mb-lg-0'>
         <div className='box'>
           <div className='box-icon'>
             <div className='icon'>
@@ -21,7 +21,7 @@ export default function IntroContent () {
         </div>
       </div>
 
-      <div className='col-lg-3'>
+      <div className='col-lg-3 col-md-3 col-10 mb-5 mb-lg-0'>
         <div className='box'>
           <div className='box-icon'>
             <div className='icon'>
@@ -40,7 +40,7 @@ export default function IntroContent () {
         </div>
       </div>
 
-      <div className='col-lg-3'>
+      <div className='col-lg-3 col-md-3 col-10 mb-5 mb-lg-0'>
         <div className='box'>
           <div className='box-icon'>
             <div className='icon'>
@@ -57,7 +57,7 @@ export default function IntroContent () {
         </div>
       </div>
 
-      <div className='col-lg-3'>
+      <div className='col-lg-3 col-md-3 col-10 mb-5 mb-lg-0'>
         <div className='box'>
           <div className='box-icon'>
             <div className='icon'>

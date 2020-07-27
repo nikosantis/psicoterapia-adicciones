@@ -1,59 +1,62 @@
+import { Element } from 'react-scroll'
+
 export default function Hero () {
   return (
-    <div className='intro'>
-      <div className='intro-float'>
-        <img src='/images/intro.png' className='img-fluid' />
-      </div>
+    <Element name='hero'>
+      <div className='intro'>
+        <div className='intro-float'>
+          <img src='/images/intro.png' className='img-fluid' />
+        </div>
 
-      <div className='container intro-container'>
-        <div className='row'>
-          <div className='col-lg-6'>
-            <h5 className='intro-pretitle'>Diplomado Clínico Internacional</h5>
-            <h1 className='intro-title'>Psicoterapia para el Tratamiento de abuso de alcohol y drogas</h1>
-            <h2 className='intro-subtitle'>Aproximación Neuroafectiva Constructivista</h2>
-            <div className='intro-slides'>
-              <div className='intro-slides-box'>
-                <div className='intro-slides-pre intro-slides-pre-left'>
-                  <p>Metodología</p>
-                </div>
+        <div className='container intro-container'>
+          <div className='row'>
+            <div className='col-xl-6 col-lg-12'>
+              <h5 className='intro-pretitle'>Diplomado Clínico Internacional</h5>
+              <h1 className='intro-title'>Psicoterapia para el Tratamiento de abuso de alcohol y drogas</h1>
+              <h2 className='intro-subtitle'>Aproximación Neuroafectiva Constructivista</h2>
+              <div className='intro-slides'>
+                <div className='intro-slides-box'>
+                  <div className='intro-slides-pre intro-slides-pre-left'>
+                    <p>Metodología</p>
+                  </div>
 
-                <div className='intro-slides-texts'>
-                  <ul className=''>
-                    <li>Clases</li>
-                    <li>Seminarios</li>
-                    <li>Psicoterapia Individual y Grupal <b>Online</b></li>
-                  </ul>
+                  <div className='intro-slides-texts'>
+                    <ul className=''>
+                      <li>Clases</li>
+                      <li>Seminarios</li>
+                      <li>Psicoterapia Individual y Grupal <b>Online</b></li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div className='intro-slides-box'>
-                <div className='intro-slides-pre intro-slides-pre-right'>
-                  <p>Dirigido a</p>
-                </div>
+                <div className='intro-slides-box'>
+                  <div className='intro-slides-pre intro-slides-pre-right'>
+                    <p>Dirigido a</p>
+                  </div>
 
-                <div className='intro-slides-texts'>
-                  <ul className=''>
-                    <li>Psicólogos</li>
-                    <li>Psiquiatras</li>
-                    <li>Médicos</li>
-                    <li>Trabajdores Sociales</li>
-                  </ul>
+                  <div className='intro-slides-texts'>
+                    <ul className=''>
+                      <li>Psicólogos</li>
+                      <li>Psiquiatras</li>
+                      <li>Médicos</li>
+                      <li>Trabajdores Sociales</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className='col-lg-6 box-r'>
-            <div className='intro-box'>
-              <div className='intro-box-text'>
-                <span className='intro-box-left'>Inicio SEP 2020 /</span>
-                <span className='intro-box-right'>100% Online</span>
+            <div className='col-xl-6 col-lg-12 box-r'>
+              <div className='intro-box'>
+                <div className='intro-box-text'>
+                  <span className='intro-box-left'>Inicio SEP 2020 /</span>
+                  <span className='intro-box-right'>100% Online</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <style jsx>
-        {`
+        <style jsx>
+          {`
           .intro {
             background-color: var(--casper-intro-bg);
             width: 100vw;
@@ -90,6 +93,10 @@ export default function Hero () {
 
             @media (min-width: 992px) {
               font-size: 2.5rem;
+            }
+
+            @media (min-width: 1200px) {
+              font-size: 2.5rem;
               text-align: left;
             }
           }
@@ -101,7 +108,7 @@ export default function Hero () {
             font-size: 1.2rem;
             text-align: center;
 
-            @media (min-width: 992px) {
+            @media (min-width: 1200px) {
               margin-top: 80px;
               text-align: left;
             }
@@ -117,8 +124,11 @@ export default function Hero () {
 
             @media (min-width: 992px) {
               font-size: 2rem;
-              text-align: left;
               margin-bottom: 25px;
+            }
+
+            @media (min-width: 1200px) {
+              text-align: left;
             }
           }
 
@@ -127,9 +137,9 @@ export default function Hero () {
             justify-content: center;
             margin-bottom: 50px;
 
-            @media (min-width: 992px) {
-              justify-content: start;
+            @media (min-width: 1200px) {
               margin-bottom: 0px;
+              justify-content: start;
             }
           }
 
@@ -192,7 +202,7 @@ export default function Hero () {
             justify-content: center;
             align-items: center;
 
-            @media (min-width: 992px) {
+            @media (min-width: 1200px) {
               justify-content: flex-end;
               align-items: flex-end;
             }
@@ -237,7 +247,8 @@ export default function Hero () {
             }
           }
         `}
-      </style>
-    </div>
+        </style>
+      </div>
+    </Element>
   )
 }

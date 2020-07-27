@@ -5,10 +5,17 @@ export default function PageContainer ({ children }) {
     <div className='wrapper'>
       <Head>
         <title>Diplomado en Adicciones | Universidad de Santiago de Chile</title>
+        <meta name='og:title' content='Diplomado en Adicciones | Universidad de Santiago de Chile' />
         <meta
           name='description'
           content='Diplomado Clínico Internacional - Psicoterapia para el Tratamiento de abuso de alcohol y drogas. Universidad de Santiago de Chile.'
         />
+        <meta
+          name='og:description'
+          content='Diplomado Clínico Internacional - Psicoterapia para el Tratamiento de abuso de alcohol y drogas. Universidad de Santiago de Chile.'
+        />
+        <meta httpEquiv='Content-Language' content='es' />
+        <meta name='author' content='Nikolas Santis' />
       </Head>
 
       {children}
@@ -32,6 +39,14 @@ export default function PageContainer ({ children }) {
 
           a {
             transition: color 0.2s ease;
+          }
+
+          .nav-link {
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+              color: rgba(0,0,0,.9);
+            }
           }
 
           /* Remove all animations and transitions for people that prefer not to see them */

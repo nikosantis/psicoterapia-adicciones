@@ -1,6 +1,15 @@
+import { useState } from 'react'
 import Link from 'next/link'
+import { Link as LinkScroll } from 'react-scroll'
+import Collapse from './collapse'
 
 export default function Navbar () {
+  const [collapsed, setCollapsed] = useState(false)
+
+  function handleClick () {
+    setCollapsed(collapsed => !collapsed)
+  }
+
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
       <div className='container'>
@@ -13,23 +22,81 @@ export default function Navbar () {
             />
           </a>
         </Link>
-        <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+        <button
+          className={`navbar-toggler${collapsed ? ' collapsed' : ''}`}
+          type='button'
+          data-toggle='collapse'
+          aria-expanded={collapsed.toString()}
+          aria-label='Toggle navigation'
+          onClick={handleClick}
+        >
           <span className='navbar-toggler-icon' />
         </button>
 
-        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+        <Collapse isOpen={collapsed}>
           <ul className='navbar-nav ml-auto'>
-            <li className='nav-item active'>
-              <a className='nav-link' href='#'>Inicio <span className='sr-only'>(current)</span></a>
+            <li className='nav-item'>
+              <LinkScroll
+                className='nav-link'
+                to='hero'
+                spy
+                smooth
+                duration={500}
+                activeClass='active'
+              >
+                Inicio <span className='sr-only'>(current)</span>
+              </LinkScroll>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='#'>Sobre el Diplomado</a>
+              <LinkScroll
+                className='nav-link'
+                to='intro'
+                spy
+                smooth
+                duration={500}
+                activeClass='active'
+              >
+                Sobre el Diplomado
+              </LinkScroll>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='#'>Contacto</a>
+              <LinkScroll
+                className='nav-link'
+                to='modules'
+                spy
+                smooth
+                duration={500}
+                activeClass='active'
+              >
+                Modulos
+              </LinkScroll>
+            </li>
+            <li className='nav-item'>
+              <LinkScroll
+                className='nav-link'
+                to='docentes'
+                spy
+                smooth
+                duration={500}
+                activeClass='active'
+              >
+                Docentes
+              </LinkScroll>
+            </li>
+            <li className='nav-item'>
+              <LinkScroll
+                className='nav-link'
+                to='contact'
+                spy
+                smooth
+                duration={500}
+                activeClass='active'
+              >
+                Contacto
+              </LinkScroll>
             </li>
           </ul>
-        </div>
+        </Collapse>
       </div>
 
       <style jsx>
