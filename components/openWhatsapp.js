@@ -70,7 +70,7 @@ function Wrapper ({ active, handleClose }) {
                       <span>
                         Hola
                         <br />
-                        ¿Necesitas más información del diplomado? ¡Escríbeme!
+                        ¿Necesitas más información del diplomado?
                       </span>
                     </span>
                   </div>
@@ -94,7 +94,7 @@ function Wrapper ({ active, handleClose }) {
             <div className='whatsapp-window-footer-msg'>
               <div className='whatsapp-window-footer-box'>
                 <div className='whatsapp-window-footer-text'>
-                  Escribe un mensaje aquí
+                  Escribe tu mensaje aquí
                 </div>
                 <div className='whatsapp-window-footer-edit' />
               </div>
@@ -175,7 +175,7 @@ function Wrapper ({ active, handleClose }) {
               display: block;
               width: 100%;
               padding: 1rem;
-              background: url(/images/whatsapp-bg.jpg);
+              background-color: #e4dcd5;
               background-size: 450px;
               box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 
