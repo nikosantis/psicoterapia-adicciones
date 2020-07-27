@@ -5,7 +5,7 @@ export default function Footer () {
         <div className='row justify-content-between'>
           <div className='col-lg-3 col-12'>
             <div className='footer-logo'>
-              <img src='/images/logo-blanco.png' alt='Universidad de Santiago de Chile' />
+              <img src='/images/logo-blanco.png' alt='Universidad de Santiago de Chile' className='img-fluid' />
             </div>
           </div>
           <div className='col-lg-7 col-12'>
@@ -52,13 +52,16 @@ export default function Footer () {
           .footer-logo {
             display: flex;
             justify-content: center;
+            align-items: stretch;
+            width: 100%;
 
             @media (min-width: 992px) {
               justify-content: start;
             }
             img {
-              width: 200px;
               margin-bottom: 50px;
+              width: 200px;
+              align-self: flex-start;
 
               @media (min-width: 992px) {
                 width: 100%;

@@ -7,12 +7,12 @@ export default function Form () {
       <form onSubmit={handleSubmit}>
         <div className='form-row'>
           <div className='form-group col-md-6'>
-            <label htmlFor='nombre'>Nombre</label>
+            <label htmlFor='nombre'>Nombre y Apellido</label>
             <input type='text' className='form-control' id='nombre' placeholder='Nombre' />
           </div>
           <div className='form-group col-md-6'>
-            <label htmlFor='apellido'>Apellido</label>
-            <input type='text' className='form-control' id='apellido' placeholder='Apellido' />
+            <label htmlFor='profesion'>Profesión</label>
+            <input type='text' className='form-control' id='profesion' placeholder='Profesión' />
           </div>
         </div>
         <div className='form-row'>

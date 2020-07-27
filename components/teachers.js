@@ -9,7 +9,7 @@ export default function Teachers () {
             <div className='col-lg-4 col-12'>
               <div className='teacher-box'>
                 <div className='teacher-image'>
-                  <img src='/images/humberto-guajardo.png' alt='' className='rounded-circle' />
+                  <img src='/images/humberto-guajardo.png' alt='' className='rounded-circle img-fluid' />
                 </div>
 
                 <div className='teacher-content'>
@@ -30,7 +30,7 @@ export default function Teachers () {
             <div className='col-lg-4 col-12'>
               <div className='teacher-box'>
                 <div className='teacher-image'>
-                  <img src='/images/diana-kushner.png' alt='' className='rounded-circle' />
+                  <img src='/images/diana-kushner.png' alt='' className='rounded-circle img-fluid' />
                 </div>
 
                 <div className='teacher-content'>
@@ -49,7 +49,7 @@ export default function Teachers () {
             <div className='col-lg-4 col-12'>
               <div className='teacher-box'>
                 <div className='teacher-image'>
-                  <img src='/images/felipe-lecannelier.png' alt='' className='rounded-circle' />
+                  <img src='/images/felipe-lecannelier.png' alt='' className='rounded-circle img-fluid' />
                 </div>
 
                 <div className='teacher-content'>
@@ -67,7 +67,9 @@ export default function Teachers () {
 
             <div className='col-lg-4 col-12'>
               <div className='teacher-box'>
-                <div className='teacher-image' />
+                <div className='teacher-image'>
+                  <img src='/images/alberto-botto.jpg' alt='' className='rounded-circle img-fluid' />
+                </div>
 
                 <div className='teacher-content'>
                   <div className='name'>
@@ -84,7 +86,9 @@ export default function Teachers () {
 
             <div className='col-lg-4 col-12'>
               <div className='teacher-box'>
-                <div className='teacher-image' />
+                <div className='teacher-image'>
+                  <img src='/images/constanza-espinoza.jpg' alt='' className='rounded-circle img-fluid' />
+                </div>
 
                 <div className='teacher-content'>
                   <div className='name'>
@@ -141,6 +145,7 @@ export default function Teachers () {
 
             img {
               width: 200px;
+              height: 200px;
             }
           }
 
