@@ -66,17 +66,27 @@ export default function Hero () {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media (min-width: 992px) {
+
+            }
           }
 
           .intro-float {
             position: absolute;
-            right: 5%;
             bottom: 0;
             z-index: 1;
             width: 55%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
 
             @media (min-width: 992px) {
               width: 500px;
+              margin: 0;
+              right: 5%;
+              left: auto;
             }
           }
 
@@ -201,6 +211,11 @@ export default function Hero () {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 110px;
+
+            @media (min-width: 992px) {
+              margin-bottom: 0;
+            }
 
             @media (min-width: 1200px) {
               justify-content: flex-end;
