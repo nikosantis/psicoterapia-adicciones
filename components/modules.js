@@ -122,6 +122,7 @@ export default function Modules () {
           {`
           .modules {
             padding: 120px 0;
+            background-color: #f8f9fa;
           }
 
           .modules-title {

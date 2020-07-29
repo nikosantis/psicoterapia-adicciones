@@ -38,7 +38,7 @@ export default function Hero () {
                       <li>Psicólogos</li>
                       <li>Psiquiatras</li>
                       <li>Médicos</li>
-                      <li>Trabajdores Sociales</li>
+                      <li>Trabajadores Sociales</li>
                     </ul>
                   </div>
                 </div>

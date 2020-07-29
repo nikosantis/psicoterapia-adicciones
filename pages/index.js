@@ -3,6 +3,7 @@ import Hero from '../components/hero'
 import Intro from '../components/intro'
 import FirstSeparator from '../components/first-separator'
 import Modules from '../components/modules'
+import Price from '../components/prices'
 import Teachers from '../components/teachers'
 import Contact from '../components/contact'
 import Footer from '../components/footer'
@@ -16,6 +17,7 @@ export default function Home () {
         <Intro />
         <FirstSeparator />
         <Modules />
+        <Price />
         <Teachers />
         <Contact />
       </main>
