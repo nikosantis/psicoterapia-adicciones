@@ -108,7 +108,7 @@ export default function Teachers () {
           {`
           .teachers {
             padding: 120px 0;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
           }
 
           .quote-left {

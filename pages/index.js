@@ -17,8 +17,8 @@ export default function Home () {
         <Intro />
         <FirstSeparator />
         <Modules />
-        <Price />
         <Teachers />
+        <Price />
         <Contact />
       </main>
       <Footer />

@@ -46,17 +46,18 @@ export default function Price () {
         {`
           .price {
             padding: 90px 0;
-            background-color: #ffffff;
+            background-color: #f8f9fa;
           }
 
           .box {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             padding: 30px 20px;
             border-radius: 5px;
             margin-bottom: 15px;
 
             h3 {
-              margin-bottom: 15px;
+              margin-bottom: 20px;
+              font-size: 1.5rem;
             }
 
             p {
