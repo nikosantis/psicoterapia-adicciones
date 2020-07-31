@@ -8,7 +8,7 @@ export default async (req, res) => {
   if (method === 'POST') {
     try {
       await sendgrid.send({
-        to: 'nikosantis@gmail.com',
+        to: 'melissa.diaz@usach.cl',
         from: 'diplomadopsicoterapiausach@gmail.com',
         subject: 'Contacto Landing Diplomado',
         text: 'Hello',

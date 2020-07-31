@@ -23,7 +23,7 @@ export default function Footer () {
                   Tel <a href='tel:+56 2225 4000'>(562) 225 4000</a>
                 </p>
                 <p>
-                  Email <a href='mailto:melissa.diaz@usach.cl'>melissa.diaz@usach.cl</a> - <a href='mailto:jenniffer.ferrada@usach.cl'>jenniffer.ferrada@usach.cl</a>
+                  Correo Electrónico <a href='mailto:melissa.diaz@usach.cl'>melissa.diaz@usach.cl</a> - <a href='mailto:jenniffer.ferrada@usach.cl'>jenniffer.ferrada@usach.cl</a>
                 </p>
               </div>
             </div>
