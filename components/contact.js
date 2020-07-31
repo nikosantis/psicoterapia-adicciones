@@ -1,4 +1,5 @@
 import { Element } from 'react-scroll'
+import { FormProvider } from '../lib/context-form'
 import Form from './form'
 
 export default function Contact () {
@@ -50,7 +51,9 @@ export default function Contact () {
             </div>
 
             <div className='col-lg-6'>
-              <Form />
+              <FormProvider>
+                <Form />
+              </FormProvider>
             </div>
           </div>
         </div>

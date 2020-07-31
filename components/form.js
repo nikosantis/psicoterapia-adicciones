@@ -1,42 +1,89 @@
+import { useFormState, useFormDispatch } from '../lib/context-form'
+import ValidForm from './valid-form'
+import Name from './form/name'
+import Profession from './form/profession'
+import Email from './form/email'
+import Phone from './form/phone'
+import Comment from './form/comment'
+
 export default function Form () {
-  function handleSubmit (evt) {
+  const state = useFormState()
+  const { setValue, reset } = useFormDispatch()
+
+  async function handleSubmit (evt) {
     evt.preventDefault()
+    setValue('error', '')
+    setValue('msg', '')
+    const inputs = {
+      ...state
+    }
+
+    setValue('loading', true)
+    const res = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ...inputs })
+    })
+
+    const text = await res.json()
+
+    if (res.status === 200) {
+      setValue('loading', false)
+      setValue('msg', text.message)
+      reset()
+    } else {
+      setValue('loading', false)
+      setValue('error', text.error)
+    }
   }
+
   return (
     <div className='contact-wrapper'>
       <form onSubmit={handleSubmit}>
         <div className='form-row'>
           <div className='form-group col-md-6'>
-            <label htmlFor='nombre'>Nombre y Apellido</label>
-            <input type='text' className='form-control' id='nombre' placeholder='Nombre' />
+            <Name />
           </div>
           <div className='form-group col-md-6'>
-            <label htmlFor='profesion'>Profesión</label>
-            <input type='text' className='form-control' id='profesion' placeholder='Profesión' />
+            <Profession />
           </div>
         </div>
         <div className='form-row'>
           <div className='form-group col-md-6'>
-            <label htmlFor='email'>Correo Eletrónico</label>
-            <input type='email' className='form-control' id='email' placeholder='ejemplo@email.cl' />
+            <Email />
           </div>
           <div className='form-group col-md-6'>
-            <label htmlFor='celular'>Celular</label>
-            <input type='text' className='form-control' id='celular' placeholder='9 1234 5678' />
+            <Phone />
           </div>
         </div>
 
         <div className='form-row'>
           <div className='form-group col-md-12'>
-            <label htmlFor='comentario'>Comentario</label>
-            <textarea className='form-control' id='comentario' rows='3' />
+            <Comment />
           </div>
         </div>
+        <small className='form-text text-muted mb-3'>* Requerido</small>
 
-        <button type='submit' className='btn btn-usach'>
-          Enviar
-        </button>
+        <ValidForm />
       </form>
+
+      {
+        state.msg && (
+          <div className='alert alert-success' role='alert'>
+            {state.msg}
+          </div>
+        )
+      }
+
+      {
+        state.error && (
+          <div className='alert alert-danger' role='alert'>
+            {state.error}
+          </div>
+        )
+      }
 
       <style jsx>
         {`
@@ -46,23 +93,15 @@ export default function Form () {
             border-radius: 5px;
           }
 
+          form {
+            margin-bottom: 20px;
+          }
+
           input::placeholder {
             color: #888888;
             opacity: 0.5;
             font-weight: 300;
             font-size: 0.875rem;
-          }
-
-          .btn-usach {
-            color: #fff;
-            background-color: var(--casper-orange);
-            border-color: var(--casper-orange);
-            transition: all 0.2s ease;
-
-            &:hover {
-              background-color: var(--casper-orange-hover);
-              border-color: var(--casper-orange-hover);
-            }
           }
         `}
       </style>

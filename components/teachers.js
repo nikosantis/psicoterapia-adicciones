@@ -39,7 +39,7 @@ export default function Teachers () {
                   </div>
                   <div className='sub'>
                     <p>
-                      Magister en Psicoterapia Cognitiva Postracionalista, USACH,. Antropóloga social. Profesora en Prevención y Rehabilitación de Drogas de la Facultad de Ciencias Médicas de la Universidad de Santiago.
+                      Psicóloga Magister en Psicoterapia Cognitiva Postracionalista, USACH., Antropóloga social. Profesora en Prevención y Rehabilitación de Drogas de la Facultad de Ciencias Médicas de la Universidad de Santiago
                     </p>
                   </div>
                 </div>
