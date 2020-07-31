@@ -14,7 +14,7 @@ export default async (req, res) => {
         text: 'Hello',
         html: `
           <div>
-            <p>Formulario Diplomado Psicoterapia 2020</p>
+            <p><b>Formulario Diplomado Psicoterapia 2020</b></p>
             <p><b>Nombre y Apellido: </b>${body.name}</p>
             <p><b>Profesión: </b>${body.profession}</p>
             <p><b>Correo Electrónico: </b>${body.email}</p>

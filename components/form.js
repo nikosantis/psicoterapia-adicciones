@@ -31,8 +31,8 @@ export default function Form () {
 
     if (res.status === 200) {
       setValue('loading', false)
-      setValue('msg', text.message)
       reset()
+      setValue('msg', text.message)
     } else {
       setValue('loading', false)
       setValue('error', text.error)
