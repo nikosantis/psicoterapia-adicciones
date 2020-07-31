@@ -24,7 +24,7 @@ export default async (req, res) => {
           </div>
         `
       })
-      res.status(200).json({ message: 'Mensaje enviado.' })
+      res.status(200).json({ message: 'Mensaje enviado. Pronto nos contactaremos con usted.' })
     } catch (error) {
       return res.status(error.statusCode || 500)
         .json({ error: 'Error al enviar el mensaje' })
