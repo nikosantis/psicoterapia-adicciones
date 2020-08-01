@@ -1,5 +1,3 @@
-import { Link as LinkScroll } from 'react-scroll'
-
 export default function Price () {
   return (
     <section className='price'>
@@ -29,15 +27,14 @@ export default function Price () {
 
           <div className='col-lg-4 text-center'>
             <div className='info'>
-              <LinkScroll
-                className='nav-link'
-                to='contact'
-                spy
-                smooth
-                duration={500}
+              <a
+                className='btn btn-usach'
+                href='https://drive.google.com/file/d/1sHZ45nIsjHob0ffFkmQXjZLmMptxolYJ/view?usp=sharing'
+                target='_blank'
+                rel='noreferrer'
               >
-                <button className='btn btn-primary btn-lg'>Obtener Más Información</button>
-              </LinkScroll>
+                Descargar Información
+              </a>
             </div>
           </div>
         </div>
@@ -71,6 +68,24 @@ export default function Price () {
 
             @media (min-width: 992px) {
               padding: 30px 0;
+            }
+          }
+
+          .btn-usach {
+            color: #fff;
+            background-color: var(--casper-orange);
+            border-color: var(--casper-orange);
+            transition: all 0.2s ease;
+
+            &:hover {
+              background-color: var(--casper-orange-hover);
+              border-color: var(--casper-orange-hover);
+            }
+
+            &:disabled {
+              color: #fff;
+              opacity: .5;
+              cursor: not-allowed;
             }
           }
         `}

@@ -55,6 +55,14 @@ export default function Contact () {
                 <Form />
               </FormProvider>
             </div>
+
+            <div className='col-lg-12 text-center'>
+              <div className='legal'>
+                <p>
+                  <em>**La Universidad de Santiago de Chile se reserva el derecho a dictar o no el programa si no existe el mínimo de participantes requeridos.</em>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -73,6 +81,13 @@ export default function Contact () {
 
           .p-title {
             margin-bottom: 10px;
+          }
+
+          .legal {
+            padding-top: 45px;
+            p {
+              font-size: 0.785rem;
+            }
           }
         `}
         </style>

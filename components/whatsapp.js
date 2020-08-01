@@ -1,10 +1,11 @@
-import { useCallback } from 'react'
+import { useCallback, useRef } from 'react'
 import { useModal } from './use-modal'
 import { FaWhatsapp } from 'react-icons/fa'
 import OpenWhatsApp from './openWhatsapp'
 
 export default function WhatsApp () {
   const { active, open, close } = useModal()
+  const wsp = useRef()
 
   const handleOpen = useCallback(
     () => {
@@ -21,14 +22,14 @@ export default function WhatsApp () {
   )
 
   return (
-    <div className='wsp' onClick={active ? handleClose : handleOpen}>
-      <div className='wsp-box'>
-        <FaWhatsapp color='#fff' />
-      </div>
+    <>
+      <div className='wsp' onClick={active ? handleClose : handleOpen} ref={wsp}>
+        <div className='wsp-box'>
+          <FaWhatsapp color='#fff' />
+        </div>
 
-      <OpenWhatsApp active={active} handleClose={handleClose} />
-      <style jsx>
-        {`
+        <style jsx>
+          {`
           .wsp {
             z-index: 2;
             position: fixed;
@@ -44,7 +45,9 @@ export default function WhatsApp () {
             display: flex;
           }
         `}
-      </style>
-    </div>
+        </style>
+      </div>
+      <OpenWhatsApp active={active} handleClose={close} wsp={wsp} />
+    </>
   )
 }

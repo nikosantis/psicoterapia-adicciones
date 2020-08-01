@@ -1,21 +1,21 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useRef, useEffect, useCallback } from 'react'
 import { format } from 'date-fns'
 import Portal from './portal'
 import ChatIcon from './icons/chat'
+import { createEvent } from '../lib/tagmanager'
 
-export default function OpenWhatsApp ({ active, handleClose }) {
+export default function OpenWhatsApp ({ active, handleClose, wsp }) {
   if (active) {
     return (
       <Portal id='whatsappChat'>
-        <Wrapper handleClose={handleClose} active={active} />
+        <Wrapper handleClose={handleClose} active={active} wsp={wsp} />
       </Portal>
     )
   }
   return null
 }
 
-function Wrapper ({ active, handleClose }) {
-  const [isActive, setIsActive] = useState(false)
+function Wrapper ({ active, handleClose, wsp }) {
   const ref = useRef(null)
 
   const keydown = useCallback(
@@ -26,6 +26,17 @@ function Wrapper ({ active, handleClose }) {
     },
     [handleClose]
   )
+
+  const outsideClick = useCallback((evt) => {
+    if (ref.current.contains(evt.target)) {
+      return
+    }
+
+    if (wsp.current.contains(evt.target)) {
+      return
+    }
+    handleClose()
+  }, [handleClose, wsp])
 
   useEffect(() => {
     if (active) {
@@ -38,14 +49,28 @@ function Wrapper ({ active, handleClose }) {
 
   useEffect(() => {
     if (active) {
-      setTimeout(() => setIsActive(true), 100)
+      window.addEventListener('mousedown', outsideClick)
+    } else {
+      window.removeEventListener('mousedown', outsideClick)
     }
-  }, [active])
+
+    return () => {
+      window.removeEventListener('mousedown', outsideClick)
+    }
+  }, [outsideClick, active])
+
+  const handleEvent = useCallback(() => {
+    createEvent({
+      event: 'wspClicked'
+    })
+  }, [])
 
   return (
     <div className='whatsapp-window' ref={ref}>
       <header className='whatsapp-window-header'>
-        <img src='/images/icon-wsp.png' alt='WhatsApp Admisión' className='whatsapp-window-avatar rounded-circle' />
+        <div className='box-image'>
+          <img src='/images/icon-wsp.png' alt='WhatsApp Admisión' className='whatsapp-window-avatar rounded-circle' />
+        </div>
         <div className='whatsapp-window-status'>
           <p className='whatsapp-window-name'>WhatsApp Admisión</p>
           <div>
@@ -89,7 +114,12 @@ function Wrapper ({ active, handleClose }) {
       </div>
 
       <footer className='whatsapp-window-footer'>
-        <a href='https://api.whatsapp.com/send?phone=56961640345' target='_blank' rel='noreferrer'>
+        <a
+          href='https://api.whatsapp.com/send?phone=56961640345'
+          target='_blank'
+          rel='noreferrer'
+          onClick={handleEvent}
+        >
           <div className='whatsapp-window-footer-area'>
             <div className='whatsapp-window-footer-msg'>
               <div className='whatsapp-window-footer-box'>
@@ -342,6 +372,11 @@ function Wrapper ({ active, handleClose }) {
                 padding-right: 2px;
               }
             }
+          }
+
+          .box-image {
+            border-radius: 50%;
+            background-color: white;
           }
         `}
       </style>

@@ -16,14 +16,14 @@ export default function Footer () {
                 </p>
                 <p>
                   <a href='https://goo.gl/maps/i1uc4cCk35gBvUNU7'>
-                    Amapolas 2095, Providencia, Santiago. Chile
+                    Amapolas 2095, Providencia, Santiago
                   </a>
                 </p>
                 <p>
                   Tel <a href='tel:+56 2225 4000'>(562) 225 4000</a>
                 </p>
                 <p>
-                  Correo Electrónico <a href='mailto:melissa.diaz@usach.cl'>melissa.diaz@usach.cl</a> - <a href='mailto:jenniffer.ferrada@usach.cl'>jenniffer.ferrada@usach.cl</a>
+                  Correo Electrónico: <a href='mailto:melissa.diaz@usach.cl'>melissa.diaz@usach.cl</a>
                 </p>
               </div>
             </div>

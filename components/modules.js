@@ -117,6 +117,7 @@ export default function Modules () {
               </ModulesItem>
             </div>
           </div>
+
         </div>
         <style jsx>
           {`
@@ -146,6 +147,24 @@ export default function Modules () {
 
             li {
               font-size: 0.875rem;
+            }
+          }
+
+          .btn-usach {
+            color: #fff;
+            background-color: var(--casper-orange);
+            border-color: var(--casper-orange);
+            transition: all 0.2s ease;
+
+            &:hover {
+              background-color: var(--casper-orange-hover);
+              border-color: var(--casper-orange-hover);
+            }
+
+            &:disabled {
+              color: #fff;
+              opacity: .5;
+              cursor: not-allowed;
             }
           }
         `}

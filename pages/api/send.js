@@ -9,7 +9,8 @@ export default async (req, res) => {
     try {
       await sendgrid.send({
         to: 'melissa.diaz@usach.cl',
-        from: 'diplomadopsicoterapiausach@gmail.com',
+        cc: 'tamara.silva@usach.cl',
+        from: 'contacto@diplomadopsicoterapia.cl',
         subject: 'Contacto Landing Diplomado',
         text: 'Hello',
         html: `

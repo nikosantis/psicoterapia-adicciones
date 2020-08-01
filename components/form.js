@@ -5,6 +5,7 @@ import Profession from './form/profession'
 import Email from './form/email'
 import Phone from './form/phone'
 import Comment from './form/comment'
+import { createEvent } from '../lib/tagmanager'
 
 export default function Form () {
   const state = useFormState()
@@ -33,6 +34,9 @@ export default function Form () {
       setValue('loading', false)
       reset()
       setValue('msg', text.message)
+      createEvent({
+        event: 'submitOk'
+      })
     } else {
       setValue('loading', false)
       setValue('error', text.error)
@@ -74,6 +78,18 @@ export default function Form () {
           <div className='alert alert-success' role='alert'>
             {state.msg}
           </div>
+        )
+      }
+
+      {
+        state.msg && (
+          <img
+            height='1'
+            width='1'
+            style={{ display: 'none' }}
+            src={`https://script.google.com/macros/s/AKfycbwKbM2fhOBeTne8TE7cAd1ymoY7scOGfcZkIlGyEecE7k6PMBJp/exec?NOMBRE_APELLIDO=${encodeURIComponent(state.name)}&PROFESION=${encodeURIComponent(state.profession)}&EMAIL=${encodeURIComponent(state.email)}&CELULAR=${encodeURIComponent(state.phone)}&MENSAJE=${encodeURIComponent(state.comment)}`}
+            alt=''
+          />
         )
       }
 

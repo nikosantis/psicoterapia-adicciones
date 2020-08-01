@@ -5,14 +5,30 @@ export default function PageContainer ({ children }) {
     <div className='wrapper'>
       <Head>
         <title>Diplomado en Adicciones | Universidad de Santiago de Chile</title>
-        <meta name='og:title' content='Diplomado en Adicciones | Universidad de Santiago de Chile' />
+        <meta
+          property='og:title'
+          content='Diplomado en Adicciones | Universidad de Santiago de Chile'
+        />
         <meta
           name='description'
           content='Diplomado Clínico Internacional - Psicoterapia para el Tratamiento de abuso de alcohol y drogas. Universidad de Santiago de Chile.'
         />
         <meta
-          name='og:description'
+          property='og:description'
           content='Diplomado Clínico Internacional - Psicoterapia para el Tratamiento de abuso de alcohol y drogas. Universidad de Santiago de Chile.'
+        />
+        <meta
+          property='og:image'
+          content='/images/og-image.png'
+        />
+        <meta
+          property='og:url'
+          content='https://diplomadopsicoterapia.cl/'
+        />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:locale'
+          content='es_ES'
         />
         <meta httpEquiv='Content-Language' content='es' />
         <meta name='author' content='Nikolas Santis' />
