@@ -19,7 +19,7 @@ export default function PageContainer ({ children }) {
         />
         <meta
           property='og:image'
-          content='/images/og-image.png'
+          content='https://diplomadopsicoterapia.cl/images/og-image.png'
         />
         <meta
           property='og:url'

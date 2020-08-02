@@ -5,7 +5,7 @@ import Form from './form'
 export default function Contact () {
   return (
     <Element name='contact'>
-      <section className='contact'>
+      <section className='contact' id='contacto'>
         <div className='container'>
           <div className='row'>
             <div className='col-lg-12'>
