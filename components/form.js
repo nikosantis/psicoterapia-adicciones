@@ -6,10 +6,12 @@ import Email from './form/email'
 import Phone from './form/phone'
 import Comment from './form/comment'
 import { createEvent } from '../lib/tagmanager'
+import { useGSS } from './use-gss'
 
 export default function Form () {
   const state = useFormState()
   const { setValue, reset } = useFormDispatch()
+  const { dataState, setGSS } = useGSS()
 
   async function handleSubmit (evt) {
     evt.preventDefault()
@@ -30,7 +32,16 @@ export default function Form () {
 
     const text = await res.json()
 
+    const forData = {
+      name: state.name,
+      profession: state.profession,
+      email: state.email,
+      phone: state.phone,
+      comment: state.comment
+    }
+
     if (res.status === 200) {
+      setGSS(forData)
       setValue('loading', false)
       reset()
       setValue('msg', text.message)
@@ -87,7 +98,7 @@ export default function Form () {
             height='1'
             width='1'
             style={{ display: 'none' }}
-            src={`https://script.google.com/macros/s/AKfycbwKbM2fhOBeTne8TE7cAd1ymoY7scOGfcZkIlGyEecE7k6PMBJp/exec?NOMBRE_APELLIDO=${encodeURIComponent(state.name)}&PROFESION=${encodeURIComponent(state.profession)}&EMAIL=${encodeURIComponent(state.email)}&CELULAR=${encodeURIComponent(state.phone)}&MENSAJE=${encodeURIComponent(state.comment)}`}
+            src={`https://script.google.com/macros/s/AKfycbwKbM2fhOBeTne8TE7cAd1ymoY7scOGfcZkIlGyEecE7k6PMBJp/exec?NOMBRE_APELLIDO=${encodeURIComponent(dataState.name)}&PROFESION=${encodeURIComponent(dataState.profession)}&EMAIL=${encodeURIComponent(dataState.email)}&CELULAR=${encodeURIComponent(dataState.phone)}&MENSAJE=${encodeURIComponent(dataState.comment)}`}
             alt=''
           />
         )
