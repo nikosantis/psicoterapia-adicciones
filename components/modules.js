@@ -4,7 +4,7 @@ import ModulesItem from './modules-item'
 export default function Modules () {
   return (
     <Element name='modules'>
-      <section className='modules'>
+      <section className='modules' id='modulos'>
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-lg-7 text-center modules-title'>

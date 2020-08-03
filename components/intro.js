@@ -4,7 +4,7 @@ import IntroContent from './intro-content'
 export default function Intro () {
   return (
     <Element name='intro'>
-      <section className='intro'>
+      <section className='intro' id='diplomado'>
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-lg-7 text-center intro-title'>
