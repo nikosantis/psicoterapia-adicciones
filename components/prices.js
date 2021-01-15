@@ -20,8 +20,8 @@ export default function Price () {
               <ul>
                 <li>Pago contado 10% descuento</li>
                 <li>Pago hasta en 10 cuotas de $75.000.- c/u (Marzo a Diciembre) con Letra o Tarjeta de Crédito</li>
-                {/* <li>Pago tarjetas de crédito según el banco 3 -6- 10 cuotas precio contado</li> */}
-                {/* <li>Pago cuotas con Pagaré</li> */}
+                {/* <li>Pago tarjetas de crédito según el banco 3 -6- 10 cuotas precio contado</li>
+                <li>Pago cuotas con Pagaré</li> */}
               </ul>
             </div>
           </div>
