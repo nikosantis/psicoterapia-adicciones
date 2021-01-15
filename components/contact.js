@@ -25,28 +25,28 @@ export default function Contact () {
                 <b>Duración del Diplomado:</b>
               </p>
               <p>
-                160 horas
+                180 horas
               </p>
 
               <p className='p-title'>
                 <b>Horario de Clases:</b>
               </p>
               <p>
-                Martes y Viernes de 18:00 a 21:00 horas
+                Miércoles de 18:00 a 21:00 horas
               </p>
 
               <p className='p-title'>
                 <b>Inicio de Clases:</b>
               </p>
               <p>
-                22 de septiembre de 2020
+                Abril de 2021
               </p>
 
               <p className='p-title'>
                 <b>Término de Clases:</b>
               </p>
               <p>
-                22 de enero 2021
+                Diciembre 2021
               </p>
             </div>
 

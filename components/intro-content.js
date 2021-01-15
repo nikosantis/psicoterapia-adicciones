@@ -16,7 +16,7 @@ export default function IntroContent () {
           </div>
 
           <div className='box-text'>
-            160 horas
+            180 horas
           </div>
         </div>
       </div>
@@ -33,9 +33,9 @@ export default function IntroContent () {
           </div>
 
           <div className='box-text'>
-            Martes y Viernes
+            Miércoles
             <br />
-            de 18:00 a 21:00 horas
+            de 18:00 a 20:00 horas
           </div>
         </div>
       </div>
@@ -69,9 +69,9 @@ export default function IntroContent () {
           </div>
 
           <div className='box-text'>
-            22 de septiembre de 2020
-            al
-            22 de enero 2021
+            Abril de 2021
+            a
+            Diciembre 2021
           </div>
         </div>
       </div>

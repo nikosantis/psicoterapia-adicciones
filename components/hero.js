@@ -48,7 +48,7 @@ export default function Hero () {
             <div className='col-xl-6 col-lg-12 box-r'>
               <div className='intro-box'>
                 <div className='intro-box-text'>
-                  <span className='intro-box-left'>Inicio SEP 2020 /</span>
+                  <span className='intro-box-left'>Inicio ABRIL 2021 /</span>
                   <span className='intro-box-right'>100% Online</span>
                 </div>
               </div>
