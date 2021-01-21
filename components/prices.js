@@ -30,7 +30,7 @@ export default function Price () {
             <div className='info'>
               <a
                 className='btn btn-usach'
-                href='https://drive.google.com/file/d/1sHZ45nIsjHob0ffFkmQXjZLmMptxolYJ/view?usp=sharing'
+                href='https://drive.google.com/file/d/1DmnGwOF8mdOh6opF30J5lsPIyr8l1cDt/view'
                 target='_blank'
                 rel='noreferrer'
               >
