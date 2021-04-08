@@ -35,7 +35,7 @@ export default function IntroContent () {
           <div className='box-text'>
             Miércoles
             <br />
-            de 18:00 a 20:00 horas
+            de 18:00 a 21:00 horas
           </div>
         </div>
       </div>
