@@ -48,8 +48,8 @@ export default function Hero () {
             <div className='col-xl-6 col-lg-12 box-r'>
               <div className='intro-box'>
                 <div className='intro-box-text'>
-                  <span className='intro-box-left'>Inicio ABRIL 2021 /</span>
-                  <span className='intro-box-right'>100% Online</span>
+                  <div className='intro-box-left'>Postulaciones NOV 2021</div>
+                  <div className='intro-box-right'>100% Online</div>
                 </div>
               </div>
             </div>
@@ -228,38 +228,34 @@ export default function Hero () {
 
           .intro-box-text {
             width: 100%;
-            display: flex;
             flex-direction: column;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
             text-align: center;
 
             @media (min-width: 992px) {
-              font-size: 2rem;
+              font-size: 1.8rem;
               flex-direction: row;
               text-align: left;
+              align-items: center;
             }
           }
 
           .intro-box-left {
             color: var(--casper-orange);
             font-weight: 600;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-
+          }
+          .intro-box-center {
+            color: var(--casper-orange);
             @media (min-width: 992px) {
-              font-size: 2rem;
+              margin-right: 5px;
+              margin-left: 5px;
             }
           }
 
           .intro-box-right {
             color: var(--casper-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-
-            @media (min-width: 992px) {
-              font-size: 2rem;
-              margin-left: 5px;
-            }
           }
         `}
         </style>

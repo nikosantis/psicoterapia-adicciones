@@ -33,9 +33,7 @@ export default function IntroContent () {
           </div>
 
           <div className='box-text'>
-            Miércoles
-            <br />
-            de 18:00 a 21:00 horas
+            Por definir
           </div>
         </div>
       </div>
@@ -69,9 +67,7 @@ export default function IntroContent () {
           </div>
 
           <div className='box-text'>
-            Abril de 2021
-            a
-            Diciembre 2021
+            Por definir
           </div>
         </div>
       </div>

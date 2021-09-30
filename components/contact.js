@@ -20,6 +20,9 @@ export default function Contact () {
               <p>
                 Profesional o Licenciado en el Área de Salud (Médicos, Psiquiatras, Psicólogos/as Trabajadores Sociales)
               </p>
+              <p>
+                Postulaciones Noviembre 2021
+              </p>
 
               <p className='p-title'>
                 <b>Duración del Diplomado:</b>
@@ -32,21 +35,21 @@ export default function Contact () {
                 <b>Horario de Clases:</b>
               </p>
               <p>
-                Miércoles de 18:00 a 21:00 horas
+                Por definir
               </p>
 
               <p className='p-title'>
                 <b>Inicio de Clases:</b>
               </p>
               <p>
-                Abril de 2021
+                Por definir
               </p>
 
               <p className='p-title'>
                 <b>Término de Clases:</b>
               </p>
               <p>
-                Diciembre 2021
+                Por definir
               </p>
             </div>
 
