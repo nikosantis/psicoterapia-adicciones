@@ -15,7 +15,7 @@ const initialState = {
 const SET_VALUE = 'SET_VALUE'
 const RESET = 'RESET'
 
-function formReducer (state, action) {
+function formReducer(state, action) {
   switch (action.type) {
     case SET_VALUE: {
       return {
@@ -34,7 +34,7 @@ function formReducer (state, action) {
   }
 }
 
-export function useForm () {
+export function useForm() {
   const [state, dispatch] = useReducer(formReducer, initialState)
 
   const setValue = useCallback((field, value) => {

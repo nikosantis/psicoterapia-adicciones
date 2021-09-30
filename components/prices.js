@@ -1,4 +1,4 @@
-export default function Price () {
+export default function Price() {
   return (
     <section className='price'>
       <div className='container'>
@@ -19,7 +19,10 @@ export default function Price () {
               <h3>Formas de pago Arancel</h3>
               <ul>
                 <li>Pago contado 10% descuento</li>
-                <li>Pago hasta en 10 cuotas de $75.000.- c/u (Marzo a Diciembre) con Letra o Tarjeta de Crédito</li>
+                <li>
+                  Pago hasta en 10 cuotas de $75.000.- c/u (Marzo a Diciembre) con Letra o
+                  Tarjeta de Crédito
+                </li>
                 {/* <li>Pago tarjetas de crédito según el banco 3 -6- 10 cuotas precio contado</li>
                 <li>Pago cuotas con Pagaré</li> */}
               </ul>
@@ -85,7 +88,7 @@ export default function Price () {
 
             &:disabled {
               color: #fff;
-              opacity: .5;
+              opacity: 0.5;
               cursor: not-allowed;
             }
           }

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { useFormState, useFormDispatch } from '../lib/context-form'
 import ValidForm from './valid-form'
 import Name from './form/name'
@@ -8,12 +10,12 @@ import Comment from './form/comment'
 import { createEvent } from '../lib/tagmanager'
 import { useGSS } from './use-gss'
 
-export default function Form () {
+export default function Form() {
   const state = useFormState()
   const { setValue, reset } = useFormDispatch()
   const { dataState, setGSS } = useGSS()
 
-  async function handleSubmit (evt) {
+  async function handleSubmit(evt) {
     evt.preventDefault()
     setValue('error', '')
     setValue('msg', '')
@@ -84,33 +86,33 @@ export default function Form () {
         <ValidForm />
       </form>
 
-      {
-        state.msg && (
-          <div className='alert alert-success' role='alert'>
-            {state.msg}
-          </div>
-        )
-      }
+      {state.msg && (
+        <div className='alert alert-success' role='alert'>
+          {state.msg}
+        </div>
+      )}
 
-      {
-        state.msg && (
-          <img
-            height='1'
-            width='1'
-            style={{ display: 'none' }}
-            src={`https://script.google.com/macros/s/AKfycbwKbM2fhOBeTne8TE7cAd1ymoY7scOGfcZkIlGyEecE7k6PMBJp/exec?NOMBRE_APELLIDO=${encodeURIComponent(dataState.name)}&PROFESION=${encodeURIComponent(dataState.profession)}&EMAIL=${encodeURIComponent(dataState.email)}&CELULAR=${encodeURIComponent(dataState.phone)}&MENSAJE=${encodeURIComponent(dataState.comment)}`}
-            alt=''
-          />
-        )
-      }
+      {state.msg && (
+        <Image
+          height='1'
+          width='1'
+          style={{ display: 'none' }}
+          src={`https://script.google.com/macros/s/AKfycbwKbM2fhOBeTne8TE7cAd1ymoY7scOGfcZkIlGyEecE7k6PMBJp/exec?NOMBRE_APELLIDO=${encodeURIComponent(
+            dataState.name
+          )}&PROFESION=${encodeURIComponent(
+            dataState.profession
+          )}&EMAIL=${encodeURIComponent(dataState.email)}&CELULAR=${encodeURIComponent(
+            dataState.phone
+          )}&MENSAJE=${encodeURIComponent(dataState.comment)}`}
+          alt=''
+        />
+      )}
 
-      {
-        state.error && (
-          <div className='alert alert-danger' role='alert'>
-            {state.error}
-          </div>
-        )
-      }
+      {state.error && (
+        <div className='alert alert-danger' role='alert'>
+          {state.error}
+        </div>
+      )}
 
       <style jsx>
         {`

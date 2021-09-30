@@ -1,11 +1,6 @@
-export default function ChatIcon (props) {
+export default function ChatIcon(props) {
   return (
-    <svg
-      viewBox='0 0 8 13'
-      width={8}
-      height={13}
-      {...props}
-    >
+    <svg viewBox='0 0 8 13' width={8} height={13} {...props}>
       <path
         opacity={0.13}
         fill='#0000000'

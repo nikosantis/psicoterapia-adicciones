@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
-export default function Custom404 () {
+import logoImg from 'public/images/fcm-logo.png'
+import introImg from 'public/images/intro.png'
+
+export default function Custom404() {
   return (
     <main>
       <div className='wrapper'>
@@ -8,7 +12,11 @@ export default function Custom404 () {
           <div className='row'>
             <div className='col-12'>
               <div className='logo'>
-                <img src='/images/fcm-logo.png' />
+                <Image
+                  src={logoImg}
+                  alt='Diplomado en Adicciones | Universidad de Santiago de Chile'
+                  placeholder='blur'
+                />
               </div>
               <h1>404 - Página no encontrada</h1>
               <p>Vuelve a la página principal</p>
@@ -19,7 +27,12 @@ export default function Custom404 () {
           </div>
         </div>
         <div className='intro-float'>
-          <img src='/images/intro.png' className='img-fluid' />
+          <Image
+            src={introImg}
+            placeholder='blur'
+            alt='Diplomado en Adicciones | Universidad de Santiago de Chile'
+            className='img-fluid'
+          />
         </div>
       </div>
       <style jsx>
@@ -77,7 +90,7 @@ export default function Custom404 () {
 
             &:disabled {
               color: #fff;
-              opacity: .5;
+              opacity: 0.5;
               cursor: not-allowed;
             }
           }
@@ -101,7 +114,7 @@ export default function Custom404 () {
             text-transform: uppercase;
             cursor: pointer;
             &:hover {
-              color: rgba(0,0,0,.9);
+              color: rgba(0, 0, 0, 0.9);
             }
           }
 

@@ -5,7 +5,7 @@ const schema = yup.object().shape({
   profession: yup.string().required().min(5).max(20)
 })
 
-function validInput (profession) {
+function validInput(profession) {
   const valid = schema.isValidSync({
     profession
   })
@@ -13,7 +13,7 @@ function validInput (profession) {
   return valid
 }
 
-export default function Profession () {
+export default function Profession() {
   const { profession } = useFormState()
   const { setValue } = useFormDispatch()
   return (
@@ -21,18 +21,20 @@ export default function Profession () {
       <label htmlFor='profession'>Profesión *</label>
       <input
         type='text'
-        className={
-          `form-control${profession.length === 0 ? '' : validInput(profession) ? ' is-valid' : ' is-invalid'}`
-        }
+        className={`form-control${
+          profession.length === 0
+            ? ''
+            : validInput(profession)
+            ? ' is-valid'
+            : ' is-invalid'
+        }`}
         id='profession'
         placeholder='Profesión'
         name='profession'
         value={profession}
-        onChange={(evt) => setValue(evt.target.name, evt.target.value)}
+        onChange={evt => setValue(evt.target.name, evt.target.value)}
       />
-      <div className='invalid-feedback'>
-        Profesión mínimo 5 caracteres
-      </div>
+      <div className='invalid-feedback'>Profesión mínimo 5 caracteres</div>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-function Button ({ children, loading, disabled }) {
+function Button({ children, loading, disabled }) {
   return (
     <button
       type='submit'
@@ -9,7 +9,11 @@ function Button ({ children, loading, disabled }) {
     >
       <span className='button-text'>{children}</span>
       {loading && (
-        <span className='spinner-border spinner-border-sm' role='status' aria-hidden='true' />
+        <span
+          className='spinner-border spinner-border-sm'
+          role='status'
+          aria-hidden='true'
+        />
       )}
 
       <style jsx>
@@ -27,7 +31,7 @@ function Button ({ children, loading, disabled }) {
 
             &:disabled {
               color: #fff;
-              opacity: .5;
+              opacity: 0.5;
               cursor: not-allowed;
             }
           }

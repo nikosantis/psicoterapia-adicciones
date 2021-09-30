@@ -1,12 +1,8 @@
-export default function ModulesItem ({ title, children }) {
+export default function ModulesItem({ title, children }) {
   return (
     <div className='modules-item'>
-      <h4>
-        {title}
-      </h4>
-      <div>
-        {children}
-      </div>
+      <h4>{title}</h4>
+      <div>{children}</div>
       <style jsx>
         {`
           .modules-item {

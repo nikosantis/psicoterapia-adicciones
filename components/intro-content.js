@@ -1,7 +1,7 @@
 import { FiEdit, FiClock, FiCalendar } from 'react-icons/fi'
 import { MdLaptopMac } from 'react-icons/md'
 
-export default function IntroContent () {
+export default function IntroContent() {
   return (
     <div className='row mt-5 justify-content-center'>
       <div className='col-lg-3 col-md-3 col-10 mb-5 mb-lg-0'>
@@ -15,9 +15,7 @@ export default function IntroContent () {
             <h3>Duración</h3>
           </div>
 
-          <div className='box-text'>
-            180 horas
-          </div>
+          <div className='box-text'>180 horas</div>
         </div>
       </div>
 
@@ -32,11 +30,7 @@ export default function IntroContent () {
             <h3>Horario de Clases</h3>
           </div>
 
-          <div className='box-text'>
-            Miércoles
-            <br />
-            de 18:00 a 21:00 horas
-          </div>
+          <div className='box-text'>Por definir</div>
         </div>
       </div>
 
@@ -51,9 +45,7 @@ export default function IntroContent () {
             <h3>Modalidad</h3>
           </div>
 
-          <div className='box-text'>
-            Online
-          </div>
+          <div className='box-text'>Online</div>
         </div>
       </div>
 
@@ -68,11 +60,7 @@ export default function IntroContent () {
             <h3>Inicio y Término de Clases</h3>
           </div>
 
-          <div className='box-text'>
-            Abril de 2021
-            a
-            Diciembre 2021
-          </div>
+          <div className='box-text'>Por definir</div>
         </div>
       </div>
 

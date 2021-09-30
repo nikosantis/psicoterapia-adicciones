@@ -1,6 +1,6 @@
 import Navbar from './navbar'
 
-export default function Header () {
+export default function Header() {
   return (
     <header className='header fixed-top'>
       <div className='header-top'>
@@ -16,7 +16,7 @@ export default function Header () {
           }
 
           .header-top {
-            width: 100vw;
+            width: 100%;
             height: 10px;
             display: flex;
           }
