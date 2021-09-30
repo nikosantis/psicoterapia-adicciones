@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Link as LinkScroll } from 'react-scroll'
-import Collapse from './collapse'
 
-export default function Navbar () {
+import Collapse from './collapse'
+import logoImg from 'public/images/fcm-logo.png'
+
+export default function Navbar() {
   const [collapsed, setCollapsed] = useState(false)
 
-  function handleClick () {
+  function handleClick() {
     setCollapsed(collapsed => !collapsed)
   }
 
@@ -15,10 +18,10 @@ export default function Navbar () {
       <div className='container'>
         <Link href='/'>
           <a className='navbar-brand'>
-            <img
-              src='/images/fcm-logo.png'
+            <Image
+              src={logoImg}
               alt='Facultad de Ciencias Médicas | Universidad de Santiago de Chile'
-              className='logo'
+              priority
             />
           </a>
         </Link>
@@ -101,12 +104,12 @@ export default function Navbar () {
 
       <style jsx>
         {`
-          .logo {
+          .navbar-brand {
             width: 200px;
           }
 
           @media (min-width: 992px) {
-            .logo {
+            .navbar-brand {
               width: 300px;
             }
           }

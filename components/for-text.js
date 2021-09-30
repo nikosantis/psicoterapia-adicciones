@@ -1,4 +1,4 @@
-export default function ForText ({ wordsText }) {
+export default function ForText({ wordsText }) {
   const animationDuration = 1.8
   const animationLength = animationDuration * wordsText.length
   const endOfAnimation = 100 / wordsText.length

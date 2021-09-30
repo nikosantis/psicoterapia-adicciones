@@ -1,6 +1,6 @@
 import Navbar from './navbar'
 
-export default function Header () {
+export default function Header() {
   return (
     <header className='header fixed-top'>
       <div className='header-top'>

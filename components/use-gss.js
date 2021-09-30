@@ -5,7 +5,7 @@ const initialState = {}
 const SET_VALUE = 'SET_VALUE'
 const RESET = 'RESET'
 
-function formReducer (state, action) {
+function formReducer(state, action) {
   switch (action.type) {
     case SET_VALUE: {
       return {
@@ -24,10 +24,10 @@ function formReducer (state, action) {
   }
 }
 
-export function useGSS () {
+export function useGSS() {
   const [dataState, dispatch] = useReducer(formReducer, initialState)
 
-  const setGSS = useCallback((payload) => {
+  const setGSS = useCallback(payload => {
     dispatch({
       type: SET_VALUE,
       payload

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function PageContainer ({ children }) {
+export default function PageContainer({ children }) {
   return (
     <div className='wrapper'>
       <Head>
@@ -21,15 +21,9 @@ export default function PageContainer ({ children }) {
           property='og:image'
           content='https://diplomadopsicoterapia.cl/images/og-image.png'
         />
-        <meta
-          property='og:url'
-          content='https://diplomadopsicoterapia.cl/'
-        />
+        <meta property='og:url' content='https://diplomadopsicoterapia.cl/' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:locale'
-          content='es_ES'
-        />
+        <meta property='og:locale' content='es_ES' />
         <meta httpEquiv='Content-Language' content='es' />
         <meta name='author' content='Nikolas Santis' />
       </Head>
@@ -42,7 +36,7 @@ export default function PageContainer ({ children }) {
             width: 100vw;
             min-height: 100vh;
           }
-      `}
+        `}
       </style>
       <style jsx global>
         {`
@@ -61,7 +55,7 @@ export default function PageContainer ({ children }) {
             text-transform: uppercase;
             cursor: pointer;
             &:hover {
-              color: rgba(0,0,0,.9);
+              color: rgba(0, 0, 0, 0.9);
             }
           }
 

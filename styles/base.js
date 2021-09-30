@@ -2,15 +2,15 @@ import css from 'styled-jsx/css'
 
 export default css.global`
   :root {
-    --font-family-sans-serif: "Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",
-      Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji",
-      "Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-sans-serif: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-    --casper-orange: #EA7600;
-    --casper-orange-hover: #9C4E00;
-    --casper-blue: #002F6C;
+    --casper-orange: #ea7600;
+    --casper-orange-hover: #9c4e00;
+    --casper-blue: #002f6c;
     --casper-background: #fff;
-    --casper-foreground: #5C7380;
+    --casper-foreground: #5c7380;
     --casper-intro-bg: #ccc;
     --casper-footer-background: #394049;
 
@@ -19,7 +19,7 @@ export default css.global`
     --shadow-smallest: 0px 4px 8px rgba(0, 0, 0, 0.12);
     --message-primary: #303030;
     --incoming-background: #fff;
-    --shadow-rgb: 0,0,0;
+    --shadow-rgb: 0, 0, 0;
     --bubble-meta: rgba(0, 0, 0, 0.45);
     --compose-panel-background: #f0f0f0;
     --rich-text-panel-background: #f0f0f0;

@@ -1,6 +1,6 @@
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
-export default function FirstSeparator () {
+export default function FirstSeparator() {
   return (
     <section className='separator'>
       <div className='container'>
@@ -11,8 +11,13 @@ export default function FirstSeparator () {
             </div>
             <div>
               <p>
-                <b>El modelo entrega una comprensión del ser humano más allá de los enfoques de control externo del paciente </b>
-                (sea a través de técnicas directivas/conductuales), el control psicofarmacológico extremo, y la sobre-patologización de la experiencia adictiva.
+                <b>
+                  El modelo entrega una comprensión del ser humano más allá de los
+                  enfoques de control externo del paciente{' '}
+                </b>
+                (sea a través de técnicas directivas/conductuales), el control
+                psicofarmacológico extremo, y la sobre-patologización de la experiencia
+                adictiva.
               </p>
             </div>
             <div className='quote-right'>

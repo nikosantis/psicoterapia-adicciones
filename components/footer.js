@@ -1,19 +1,26 @@
-export default function Footer () {
+import Image from 'next/image'
+
+import usachLogo from 'public/images/logo-blanco.png'
+
+export default function Footer() {
   return (
     <footer className='footer'>
       <div className='container'>
         <div className='row justify-content-between'>
           <div className='col-lg-3 col-12'>
             <div className='footer-logo'>
-              <img src='/images/logo-blanco.png' alt='Universidad de Santiago de Chile' className='img-fluid' />
+              <Image
+                src={usachLogo}
+                alt='Universidad de Santiago de Chile'
+                className='img-fluid'
+                placeholder='blur'
+              />
             </div>
           </div>
           <div className='col-lg-7 col-12'>
             <div className='footer-texts'>
               <div className='footer-box'>
-                <p>
-                  Unidad de Adicciones – Universidad de Santiago de Chile © 2020
-                </p>
+                <p>Unidad de Adicciones – Universidad de Santiago de Chile © 2020</p>
                 <p>
                   <a href='https://goo.gl/maps/i1uc4cCk35gBvUNU7'>
                     Amapolas 2095, Providencia, Santiago
@@ -23,7 +30,8 @@ export default function Footer () {
                   Tel <a href='tel:+56 2225 4000'>(562) 225 4000</a>
                 </p>
                 <p>
-                  Correo Electrónico: <a href='mailto:melissa.diaz@usach.cl'>melissa.diaz@usach.cl</a>
+                  Correo Electrónico:{' '}
+                  <a href='mailto:melissa.diaz@usach.cl'>melissa.diaz@usach.cl</a>
                 </p>
               </div>
             </div>
@@ -31,9 +39,7 @@ export default function Footer () {
           <div className='col-lg-2 col-12'>
             <div className='footer-texts'>
               <div className='footer-box'>
-                <p>
-                  Desarrollado por:
-                </p>
+                <p>Desarrollado por:</p>
                 <p>
                   <a href='https://www.linkedin.com/in/nikosantis/'>Nikolas Santis</a>
                 </p>

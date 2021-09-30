@@ -9,7 +9,7 @@ import Contact from '../components/contact'
 import Footer from '../components/footer'
 import WhatsApp from '../components/whatsapp'
 
-export default function Home () {
+export default function Home() {
   return (
     <Page>
       <Hero />

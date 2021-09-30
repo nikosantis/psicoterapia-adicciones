@@ -1,10 +1,13 @@
 import { useRef, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 import { format } from 'date-fns'
+
 import Portal from './portal'
 import ChatIcon from './icons/chat'
 import { createEvent } from '../lib/tagmanager'
+import wspImg from 'public/images/icon-wsp.png'
 
-export default function OpenWhatsApp ({ active, handleClose, wsp }) {
+export default function OpenWhatsApp({ active, handleClose, wsp }) {
   if (active) {
     return (
       <Portal id='whatsappChat'>
@@ -15,7 +18,7 @@ export default function OpenWhatsApp ({ active, handleClose, wsp }) {
   return null
 }
 
-function Wrapper ({ active, handleClose, wsp }) {
+function Wrapper({ active, handleClose, wsp }) {
   const ref = useRef(null)
 
   const keydown = useCallback(
@@ -27,16 +30,19 @@ function Wrapper ({ active, handleClose, wsp }) {
     [handleClose]
   )
 
-  const outsideClick = useCallback((evt) => {
-    if (ref.current.contains(evt.target)) {
-      return
-    }
+  const outsideClick = useCallback(
+    evt => {
+      if (ref.current.contains(evt.target)) {
+        return
+      }
 
-    if (wsp.current.contains(evt.target)) {
-      return
-    }
-    handleClose()
-  }, [handleClose, wsp])
+      if (wsp.current.contains(evt.target)) {
+        return
+      }
+      handleClose()
+    },
+    [handleClose, wsp]
+  )
 
   useEffect(() => {
     if (active) {
@@ -69,7 +75,12 @@ function Wrapper ({ active, handleClose, wsp }) {
     <div className='whatsapp-window' ref={ref}>
       <header className='whatsapp-window-header'>
         <div className='box-image'>
-          <img src='/images/icon-wsp.png' alt='WhatsApp Admisión' className='whatsapp-window-avatar rounded-circle' />
+          <Image
+            src={wspImg}
+            alt='WhatsApp Admisión'
+            className='whatsapp-window-avatar rounded-circle'
+            priority
+          />
         </div>
         <div className='whatsapp-window-status'>
           <p className='whatsapp-window-name'>WhatsApp Admisión</p>
@@ -123,9 +134,7 @@ function Wrapper ({ active, handleClose, wsp }) {
           <div className='whatsapp-window-footer-area'>
             <div className='whatsapp-window-footer-msg'>
               <div className='whatsapp-window-footer-box'>
-                <div className='whatsapp-window-footer-text'>
-                  Escribe tu mensaje aquí
-                </div>
+                <div className='whatsapp-window-footer-text'>Escribe tu mensaje aquí</div>
                 <div className='whatsapp-window-footer-edit' />
               </div>
             </div>
@@ -139,7 +148,8 @@ function Wrapper ({ active, handleClose, wsp }) {
             position: fixed;
             bottom: 98px;
             opacity: ${active ? '1' : '0'};
-            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -161,7 +171,7 @@ function Wrapper ({ active, handleClose, wsp }) {
               background: #075e54;
               border-top-left-radius: 5px;
               border-top-right-radius: 5px;
-              box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+              box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
             }
             &-avatar {
               width: 40px;
@@ -176,7 +186,7 @@ function Wrapper ({ active, handleClose, wsp }) {
             &-status {
               float: left;
               display: block;
-              margin-left: .75rem;
+              margin-left: 0.75rem;
               color: white;
               font-weight: bold;
             }
@@ -195,7 +205,7 @@ function Wrapper ({ active, handleClose, wsp }) {
               display: block;
               float: left;
               margin-left: 3px;
-              font-size: .7rem;
+              font-size: 0.7rem;
               font-style: normal;
               font-weight: lighter;
             }
@@ -207,7 +217,7 @@ function Wrapper ({ active, handleClose, wsp }) {
               padding: 1rem;
               background-color: #e4dcd5;
               background-size: 450px;
-              box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+              box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 
               &-item {
                 padding-left: 6.5%;
@@ -244,7 +254,7 @@ function Wrapper ({ active, handleClose, wsp }) {
                   position: relative;
                   z-index: 200;
                   border-radius: 7.5px;
-                  box-shadow: 0 1px .5px rgba(var(--shadow-rgb),.13);
+                  box-shadow: 0 1px 0.5px rgba(var(--shadow-rgb), 0.13);
                   background-color: var(--incoming-background);
                 }
 
@@ -347,7 +357,7 @@ function Wrapper ({ active, handleClose, wsp }) {
                 line-height: 20px;
                 pointer-events: none;
                 position: absolute;
-                transition: opacity .08s linear;
+                transition: opacity 0.08s linear;
                 z-index: 2;
                 -webkit-font-smoothing: antialiased;
                 top: 0;

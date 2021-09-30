@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 
 const isClient = typeof window !== 'undefined'
 
-export default function Portal ({ id, children, container }) {
+export default function Portal({ id, children, container }) {
   useEffect(() => {
     renderContainer()
     return () => unrenderContainer()
@@ -15,7 +15,7 @@ export default function Portal ({ id, children, container }) {
     rootElement = document.createElement('div')
   }
 
-  function renderContainer () {
+  function renderContainer() {
     getContainer(container).appendChild(rootElement)
 
     if (id) {
@@ -23,7 +23,7 @@ export default function Portal ({ id, children, container }) {
     }
   }
 
-  function unrenderContainer () {
+  function unrenderContainer() {
     getContainer(container).removeChild(rootElement)
   }
 
@@ -34,6 +34,6 @@ export default function Portal ({ id, children, container }) {
   return createPortal(children, rootElement)
 }
 
-function getContainer (container) {
+function getContainer(container) {
   return container || document.body
 }

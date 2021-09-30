@@ -11,7 +11,7 @@ const schema = yup.object().shape({
   comment: yup.string()
 })
 
-function validForm (state) {
+function validForm(state) {
   const valid = schema.isValidSync({
     name: state.name,
     profession: state.profession,
@@ -23,7 +23,7 @@ function validForm (state) {
   return valid
 }
 
-function ValidForm () {
+function ValidForm() {
   const state = useFormState()
   const [isValid, setIsValid] = useState(false)
 

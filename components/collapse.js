@@ -3,7 +3,7 @@ import { Transition } from 'react-transition-group'
 
 const duration = 350
 
-function getClass (state) {
+function getClass(state) {
   switch (state) {
     case 'entered': {
       return 'collapse show'
@@ -20,26 +20,26 @@ function getClass (state) {
   }
 }
 
-export default function Collapse ({ isOpen, children }) {
+export default function Collapse({ isOpen, children }) {
   const [height, setHeight] = useState(null)
 
-  function onEntering (node) {
+  function onEntering(node) {
     setHeight(node.scrollHeight)
   }
 
-  function onEntered () {
+  function onEntered() {
     setHeight(null)
   }
 
-  function onExit (node) {
+  function onExit(node) {
     setHeight(node.scrollHeight)
   }
 
-  function onExiting () {
+  function onExiting() {
     setHeight(0)
   }
 
-  function onExited () {
+  function onExited() {
     setHeight(null)
   }
 
@@ -54,10 +54,7 @@ export default function Collapse ({ isOpen, children }) {
       onExit={onExit}
     >
       {state => (
-        <div
-          className={`${getClass(state)} navbar-collapse`}
-          style={{ height }}
-        >
+        <div className={`${getClass(state)} navbar-collapse`} style={{ height }}>
           {children}
         </div>
       )}
