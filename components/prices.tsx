@@ -6,11 +6,11 @@ export default function Price() {
           <div className='col-lg-4'>
             <div className='box text-center'>
               <h3>Matrícula</h3>
-              <p>$66.000</p>
+              <p>$66.000 (valores referenciales al año 2021)</p>
             </div>
             <div className='box text-center'>
               <h3>Arancel</h3>
-              <p>$750.000</p>
+              <p>$900.000</p>
             </div>
           </div>
 
@@ -18,13 +18,11 @@ export default function Price() {
             <div className='box'>
               <h3>Formas de pago Arancel</h3>
               <ul>
-                <li>Pago contado 10% descuento</li>
+                <li>Pago contado: 10% Descuento</li>
                 <li>
-                  Pago hasta en 10 cuotas de $75.000.- c/u (Marzo a Diciembre) con Letra o
-                  Tarjeta de Crédito
+                  Pago hasta en 10 cuotas de $90.000.- c/u (Marzo a Diciembre) con Letra o
+                  Tarjeta de crédito.
                 </li>
-                {/* <li>Pago tarjetas de crédito según el banco 3 -6- 10 cuotas precio contado</li>
-                <li>Pago cuotas con Pagaré</li> */}
               </ul>
             </div>
           </div>

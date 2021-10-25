@@ -83,6 +83,7 @@ export default function Modules() {
                   <li>Estrategias vinculares con el paciente.</li>
                 </ul>
               </ModulesItem>
+              <ModulesItem title='9. Supervisión clínica con el equipo docente' />
             </div>
           </div>
         </div>
