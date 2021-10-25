@@ -27,22 +27,22 @@ export default function Contact() {
               <p className='p-title'>
                 <b>Duración del Diplomado:</b>
               </p>
-              <p>180 horas</p>
+              <p>180 horas (pedagógicas y autónomas)</p>
 
               <p className='p-title'>
                 <b>Horario de Clases:</b>
               </p>
-              <p>Por definir</p>
+              <p>Miércoles 18:00 a 21:00 horas</p>
 
               <p className='p-title'>
                 <b>Inicio de Clases:</b>
               </p>
-              <p>Por definir</p>
+              <p>Abril de 2022</p>
 
               <p className='p-title'>
                 <b>Término de Clases:</b>
               </p>
-              <p>Por definir</p>
+              <p>Diciembre de 2022</p>
             </div>
 
             <div className='col-lg-6'>
