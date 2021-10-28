@@ -60,19 +60,21 @@ export default function Footer() {
             justify-content: center;
             align-items: stretch;
             width: 100%;
-
-            @media (min-width: 992px) {
+          }
+          @media (min-width: 992px) {
+            .footer-logo {
               justify-content: start;
             }
-            img {
-              margin-bottom: 50px;
-              width: 200px;
-              align-self: flex-start;
-
-              @media (min-width: 992px) {
-                width: 100%;
-                margin-bottom: 0px;
-              }
+          }
+          .footer-logo img {
+            margin-bottom: 50px;
+            width: 200px;
+            align-self: flex-start;
+          }
+          @media (min-width: 992px) {
+            .footer-logo img {
+              width: 100%;
+              margin-bottom: 0px;
             }
           }
 
@@ -83,13 +85,13 @@ export default function Footer() {
             align-items: center;
             display: flex;
             justify-content: center;
-
-            &:first-of-type {
-              margin-bottom: 20px;
-
-              @media (min-width: 992px) {
-                margin-bottom: 0px;
-              }
+          }
+          .footer-texts:first-of-type {
+            margin-bottom: 20px;
+          }
+          @media (min-width: 992px) {
+            .footer-texts:first-of-type {
+              margin-bottom: 0px;
             }
           }
 

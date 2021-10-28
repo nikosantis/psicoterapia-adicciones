@@ -83,9 +83,9 @@ export default function Contact() {
 
             .legal {
               padding-top: 45px;
-              p {
-                font-size: 0.785rem;
-              }
+            }
+            .legal p {
+              font-size: 0.785rem;
             }
           `}
         </style>

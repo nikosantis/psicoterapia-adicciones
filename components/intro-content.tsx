@@ -89,10 +89,9 @@ export default function IntroContent() {
           .box-title {
             text-align: center;
             margin-bottom: 15px;
-
-            h3 {
-              font-size: 1.2rem;
-            }
+          }
+          .box-title h3 {
+            font-size: 1.2rem;
           }
 
           .box-text {

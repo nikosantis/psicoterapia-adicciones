@@ -53,22 +53,21 @@ export default function Price() {
             padding: 30px 20px;
             border-radius: 5px;
             margin-bottom: 15px;
-
-            h3 {
-              margin-bottom: 20px;
-              font-size: 1.5rem;
-            }
-
-            p {
-              margin-bottom: 0;
-            }
+          }
+          .box h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+          }
+          .box p {
+            margin-bottom: 0;
           }
 
           .info {
             padding: 30px 0;
             padding-top: 50px;
-
-            @media (min-width: 992px) {
+          }
+          @media (min-width: 992px) {
+            .info {
               padding: 30px 0;
             }
           }
@@ -78,17 +77,16 @@ export default function Price() {
             background-color: var(--casper-orange);
             border-color: var(--casper-orange);
             transition: all 0.2s ease;
+          }
+          .btn-usach:hover {
+            background-color: var(--casper-orange-hover);
+            border-color: var(--casper-orange-hover);
+          }
 
-            &:hover {
-              background-color: var(--casper-orange-hover);
-              border-color: var(--casper-orange-hover);
-            }
-
-            &:disabled {
-              color: #fff;
-              opacity: 0.5;
-              cursor: not-allowed;
-            }
+          .btn-usach:disabled {
+            color: #fff;
+            opacity: 0.5;
+            cursor: not-allowed;
           }
         `}
       </style>

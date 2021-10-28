@@ -59,9 +59,9 @@ export default function PageContainer({ children }: Props) {
           .nav-link {
             text-transform: uppercase;
             cursor: pointer;
-            &:hover {
-              color: rgba(0, 0, 0, 0.9);
-            }
+          }
+          .nav-link:hover {
+            color: rgba(0, 0, 0, 0.9);
           }
 
           /* Remove all animations and transitions for people that prefer not to see them */

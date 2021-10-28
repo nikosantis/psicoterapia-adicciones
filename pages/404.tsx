@@ -60,8 +60,9 @@ export default function Custom404() {
             right: 0;
             margin-left: auto;
             margin-right: auto;
-
-            @media (min-width: 992px) {
+          }
+          @media (min-width: 992px) {
+            .intro-float {
               width: 500px;
               margin: 0;
               right: 5%;
@@ -82,17 +83,15 @@ export default function Custom404() {
             background-color: var(--casper-orange);
             border-color: var(--casper-orange);
             transition: all 0.2s ease;
-
-            &:hover {
-              background-color: var(--casper-orange-hover);
-              border-color: var(--casper-orange-hover);
-            }
-
-            &:disabled {
-              color: #fff;
-              opacity: 0.5;
-              cursor: not-allowed;
-            }
+          }
+          .btn-usach:hover {
+            background-color: var(--casper-orange-hover);
+            border-color: var(--casper-orange-hover);
+          }
+          .btn-usach:disabled {
+            color: #fff;
+            opacity: 0.5;
+            cursor: not-allowed;
           }
         `}
       </style>
@@ -113,9 +112,9 @@ export default function Custom404() {
           .nav-link {
             text-transform: uppercase;
             cursor: pointer;
-            &:hover {
-              color: rgba(0, 0, 0, 0.9);
-            }
+          }
+          .nav-link: hover {
+            color: rgba(0, 0, 0, 0.9);
           }
 
           /* Remove all animations and transitions for people that prefer not to see them */
