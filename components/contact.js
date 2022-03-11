@@ -22,7 +22,6 @@ export default function Contact() {
                 Psicólogos/as Trabajadores Sociales)
               </p>
               <p>¡Últimos cupos!. Postulaciones Abril 2022</p>
-
               <p className='p-title'>
                 <b>Duración del Diplomado:</b>
               </p>
