@@ -62,7 +62,8 @@ export default function Hero() {
             <div className='col-xl-6 col-lg-12 box-r'>
               <div className='intro-box'>
                 <div className='intro-box-text'>
-                  <div className='intro-box-left'>Postulaciones NOV 2021</div>
+                  <div className='intro-box-left'>POSTULACIONES ABIERTAS</div>
+                  <div className='intro-box-left'>¡ÚLTIMOS CUPOS!</div>
                   <div className='intro-box-right'>100% Online</div>
                 </div>
               </div>

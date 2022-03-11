@@ -21,7 +21,7 @@ export default function Contact() {
                 Profesional o Licenciado en el Área de Salud (Médicos, Psiquiatras,
                 Psicólogos/as Trabajadores Sociales)
               </p>
-              <p>Postulaciones Noviembre 2021</p>
+              <p>¡Últimos cupos!. Postulaciones Abril 2022</p>
 
               <p className='p-title'>
                 <b>Duración del Diplomado:</b>
