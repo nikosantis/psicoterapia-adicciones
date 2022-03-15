@@ -6,11 +6,11 @@ export default function Price() {
           <div className='col-lg-4'>
             <div className='box text-center'>
               <h3>Matrícula</h3>
-              <p>$66.000</p>
+              <p>$68.000</p>
             </div>
             <div className='box text-center'>
               <h3>Arancel</h3>
-              <p>$750.000</p>
+              <p>$800.000</p>
             </div>
           </div>
 
@@ -20,7 +20,7 @@ export default function Price() {
               <ul>
                 <li>Pago contado 10% descuento</li>
                 <li>
-                  Pago hasta en 10 cuotas de $75.000.- c/u (Marzo a Diciembre) con Letra o
+                  Pago hasta en 10 cuotas de $80.000.- c/u (Marzo a Diciembre) con Letra o
                   Tarjeta de Crédito
                 </li>
                 {/* <li>Pago tarjetas de crédito según el banco 3 -6- 10 cuotas precio contado</li>
