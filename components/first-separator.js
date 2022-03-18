@@ -46,8 +46,9 @@ export default function FirstSeparator() {
 
           p {
             text-align: center;
-
-            @media (min-width: 992px) {
+          }
+          @media (min-width: 992px) {
+            p {
               font-size: 1.2rem;
             }
           }

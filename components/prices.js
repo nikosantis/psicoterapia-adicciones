@@ -10,7 +10,7 @@ export default function Price() {
             </div>
             <div className='box text-center'>
               <h3>Arancel</h3>
-              <p>$800.000</p>
+              <p>$900.000</p>
             </div>
           </div>
 
@@ -20,7 +20,7 @@ export default function Price() {
               <ul>
                 <li>Pago contado 10% descuento</li>
                 <li>
-                  Pago hasta en 10 cuotas de $80.000.- c/u (Marzo a Diciembre) con Letra o
+                  Pago hasta en 10 cuotas de $90.000.- c/u (Marzo a Diciembre) con Letra o
                   Tarjeta de Crédito
                 </li>
                 {/* <li>Pago tarjetas de crédito según el banco 3 -6- 10 cuotas precio contado</li>
@@ -55,22 +55,22 @@ export default function Price() {
             padding: 30px 20px;
             border-radius: 5px;
             margin-bottom: 15px;
+          }
+          .box h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+          }
 
-            h3 {
-              margin-bottom: 20px;
-              font-size: 1.5rem;
-            }
-
-            p {
-              margin-bottom: 0;
-            }
+          .box p {
+            margin-bottom: 0;
           }
 
           .info {
             padding: 30px 0;
             padding-top: 50px;
-
-            @media (min-width: 992px) {
+          }
+          @media (min-width: 992px) {
+            .info {
               padding: 30px 0;
             }
           }
@@ -80,17 +80,15 @@ export default function Price() {
             background-color: var(--casper-orange);
             border-color: var(--casper-orange);
             transition: all 0.2s ease;
-
-            &:hover {
-              background-color: var(--casper-orange-hover);
-              border-color: var(--casper-orange-hover);
-            }
-
-            &:disabled {
-              color: #fff;
-              opacity: 0.5;
-              cursor: not-allowed;
-            }
+          }
+          .btn-usach:hover {
+            background-color: var(--casper-orange-hover);
+            border-color: var(--casper-orange-hover);
+          }
+          .btn-usach:disabled {
+            color: #fff;
+            opacity: 0.5;
+            cursor: not-allowed;
           }
         `}
       </style>

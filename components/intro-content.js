@@ -30,7 +30,7 @@ export default function IntroContent() {
             <h3>Horario de Clases</h3>
           </div>
 
-          <div className='box-text'>Por definir</div>
+          <div className='box-text'>18:00 a 21:00 horas</div>
         </div>
       </div>
 
@@ -60,7 +60,7 @@ export default function IntroContent() {
             <h3>Inicio y Término de Clases</h3>
           </div>
 
-          <div className='box-text'>Por definir</div>
+          <div className='box-text'>20 de abril - diciembre 2022</div>
         </div>
       </div>
 
@@ -87,10 +87,9 @@ export default function IntroContent() {
           .box-title {
             text-align: center;
             margin-bottom: 15px;
-
-            h3 {
-              font-size: 1.2rem;
-            }
+          }
+          .box-title h3 {
+            font-size: 1.2rem;
           }
 
           .box-text {

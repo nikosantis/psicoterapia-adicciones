@@ -159,8 +159,9 @@ export default function Teachers() {
 
             p {
               text-align: center;
-
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              p {
                 font-size: 1.2rem;
               }
             }
@@ -189,17 +190,13 @@ export default function Teachers() {
               text-align: center;
             }
 
-            .name {
-              h4 {
-                font-size: 1.125rem;
-              }
+            .name h4 {
+              font-size: 1.125rem;
             }
 
-            .sub {
-              p {
-                font-size: 1rem;
-                margin-bottom: 5px;
-              }
+            .sub p {
+              font-size: 1rem;
+              margin-bottom: 5px;
             }
           `}
         </style>

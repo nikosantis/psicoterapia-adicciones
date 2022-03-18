@@ -30,17 +30,17 @@ export default function Contact() {
               <p className='p-title'>
                 <b>Horario de Clases:</b>
               </p>
-              <p>Por definir</p>
+              <p>18:00 a 21:00 horas</p>
 
               <p className='p-title'>
                 <b>Inicio de Clases:</b>
               </p>
-              <p>Por definir</p>
+              <p>20 de abril</p>
 
               <p className='p-title'>
                 <b>Término de Clases:</b>
               </p>
-              <p>Por definir</p>
+              <p>Diciembre 2022</p>
             </div>
 
             <div className='col-lg-6'>
@@ -81,9 +81,9 @@ export default function Contact() {
 
             .legal {
               padding-top: 45px;
-              p {
-                font-size: 0.785rem;
-              }
+            }
+            .legal p {
+              font-size: 0.785rem;
             }
           `}
         </style>

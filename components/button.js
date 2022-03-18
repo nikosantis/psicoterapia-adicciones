@@ -23,17 +23,15 @@ function Button({ children, loading, disabled }) {
             background-color: var(--casper-orange);
             border-color: var(--casper-orange);
             transition: all 0.2s ease;
-
-            &:hover {
-              background-color: var(--casper-orange-hover);
-              border-color: var(--casper-orange-hover);
-            }
-
-            &:disabled {
-              color: #fff;
-              opacity: 0.5;
-              cursor: not-allowed;
-            }
+          }
+          .btn-usach:hover {
+            background-color: var(--casper-orange-hover);
+            border-color: var(--casper-orange-hover);
+          }
+          .btn-usach:disabled {
+            color: #fff;
+            opacity: 0.5;
+            cursor: not-allowed;
           }
 
           .button-text {

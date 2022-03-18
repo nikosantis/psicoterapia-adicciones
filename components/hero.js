@@ -81,9 +81,6 @@ export default function Hero() {
               display: flex;
               justify-content: center;
               align-items: center;
-
-              @media (min-width: 992px) {
-              }
             }
 
             .intro-float {
@@ -95,8 +92,9 @@ export default function Hero() {
               right: 0;
               margin-left: auto;
               margin-right: auto;
-
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              .intro-float {
                 width: 500px;
                 margin: 0;
                 right: 5%;
@@ -114,12 +112,16 @@ export default function Hero() {
               font-weight: 600;
               font-size: 2rem;
               text-align: center;
+            }
 
-              @media (min-width: 992px) {
+            @media (min-width: 992px) {
+              .intro-title {
                 font-size: 2.5rem;
               }
+            }
 
-              @media (min-width: 1200px) {
+            @media (min-width: 1200px) {
+              .intro-title {
                 font-size: 2.5rem;
                 text-align: left;
               }
@@ -131,8 +133,10 @@ export default function Hero() {
               text-transform: uppercase;
               font-size: 1.2rem;
               text-align: center;
+            }
 
-              @media (min-width: 1200px) {
+            @media (min-width: 1200px) {
+              .intro-pretitle {
                 margin-top: 80px;
                 text-align: left;
               }
@@ -145,13 +149,17 @@ export default function Hero() {
               margin-bottom: 50px;
               font-size: 1.2rem;
               text-align: center;
+            }
 
-              @media (min-width: 992px) {
+            @media (min-width: 992px) {
+              .intro-subtitle {
                 font-size: 2rem;
                 margin-bottom: 25px;
               }
+            }
 
-              @media (min-width: 1200px) {
+            @media (min-width: 1200px) {
+              .intro-subtitle {
                 text-align: left;
               }
             }
@@ -160,8 +168,10 @@ export default function Hero() {
               display: flex;
               justify-content: center;
               margin-bottom: 50px;
+            }
 
-              @media (min-width: 1200px) {
+            @media (min-width: 1200px) {
+              .intro-slides {
                 margin-bottom: 0px;
                 justify-content: start;
               }
@@ -169,15 +179,18 @@ export default function Hero() {
 
             .intro-slides-box {
               width: 50%;
-
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              .intro-slides-box {
                 width: 200px;
               }
             }
 
             .intro-slides-box:first-of-type {
               margin-right: 10px;
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              .intro-slides-box:first-of-type {
                 margin-right: 15px;
               }
             }
@@ -186,8 +199,9 @@ export default function Hero() {
               background-color: var(--casper-blue);
               padding: 10px 15px;
               width: 100%;
-
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              .intro-slides-pre {
                 width: 200px;
               }
             }
@@ -226,12 +240,15 @@ export default function Hero() {
               justify-content: center;
               align-items: center;
               margin-bottom: 110px;
-
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              .box-r {
                 margin-bottom: 0;
               }
+            }
 
-              @media (min-width: 1200px) {
+            @media (min-width: 1200px) {
+              .box-r {
                 justify-content: flex-end;
                 align-items: flex-end;
               }
@@ -247,8 +264,9 @@ export default function Hero() {
               text-transform: uppercase;
               font-weight: 600;
               text-align: center;
-
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              .intro-box-text {
                 font-size: 1.8rem;
                 flex-direction: row;
                 text-align: left;
@@ -262,7 +280,9 @@ export default function Hero() {
             }
             .intro-box-center {
               color: var(--casper-orange);
-              @media (min-width: 992px) {
+            }
+            @media (min-width: 992px) {
+              .intro-box-center {
                 margin-right: 5px;
                 margin-left: 5px;
               }
