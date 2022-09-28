@@ -80,6 +80,8 @@ function Wrapper({ active, handleClose, wsp }) {
             alt='WhatsApp Admisión'
             className='whatsapp-window-avatar rounded-circle'
             priority
+            width={40}
+            height={40}
           />
         </div>
         <div className='whatsapp-window-status'>
@@ -382,6 +384,9 @@ function Wrapper({ active, handleClose, wsp }) {
           .box-image {
             border-radius: 50%;
             background-color: white;
+            width: 40px;
+            height: 40px;
+            position: relative;
           }
         `}
       </style>
