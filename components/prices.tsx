@@ -34,7 +34,7 @@ export default function Prices() {
                 Información del diplomado
               </h4>
               <a
-                href='https://drive.google.com/file/d/1BoAr6JS5xg_720QyjbBinD54LIukE03I/view'
+                href='https://drive.google.com/file/d/1SdfEejRQskrnluYl_cDWGq4GMMiRA9T2/view?usp=share_link'
                 target='_blank'
                 className='select-none rounded bg-u-orange-primary-500 py-2 px-3 text-center font-medium text-white transition-all hover:bg-u-orange-primary-700'
                 rel='noreferrer'
