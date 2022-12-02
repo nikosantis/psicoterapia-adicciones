@@ -19,10 +19,9 @@ export default function Prices() {
               <h4 className='mb-2 text-xl font-bold'>Formas de pago</h4>
               <ul className='list-disc text-left'>
                 <li>
-                  Pago contado 10% descuento (Débito o Transferencia
-                  electrónica).
+                  Pago contado 10% descuento (débito, transferencia electrónica
+                  o tarjeta de crédito)
                 </li>
-                <li>Pago tarjeta de crédito.</li>
                 <li>Pago hasta en 10 cuotas de $145.000.- c/u con Letra.</li>
               </ul>
             </div>
