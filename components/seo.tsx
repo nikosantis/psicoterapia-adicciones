@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { seoMetas } from 'lib/seo-metas'
 
 const CANONICAL_URL = 'https://diplomadopsicoterapia.cl'
-const OG_BASE_IMAGE = `${CANONICAL_URL}/images/og-image.png`
+const OG_BASE_IMAGE = `${CANONICAL_URL}/images/diplomado-og.png`
 
 export type CustomMetaType = {
   title?: string
