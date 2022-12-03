@@ -6,7 +6,7 @@ const API_KEY = process.env.SENDINBLUE_API_KEY
 const SENDINBLUE_URL = 'https://api.sendinblue.com/v3/smtp/email'
 const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api/siteverify'
 const RECAPTCHA_SITE_SECRET = process.env.RECAPTCHA_SITE_SECRET
-const MAIL_TO = 'tamara.silva@usach.cl'
+const MAIL_TO = 'melissa.diaz@usach.cl'
 
 type BodyType = {
   name: string
@@ -38,16 +38,13 @@ export default async function handler(
         }
       }
     )
-    console.log('🚀 ~ file: send-email.ts:41 ~ reCaptchaRes', reCaptchaRes)
     const reCaptchaJson = await reCaptchaRes.json()
-    console.log('🚀 ~ file: send-email.ts:43 ~ reCaptchaJson', reCaptchaJson)
     if (reCaptchaJson && reCaptchaJson.success && reCaptchaJson.score >= 0.5) {
       const checkIfExist = await prisma.contact.findFirst({
         where: {
           email: body.email
         }
       })
-      console.log('🚀 ~ file: send-email.ts:50 ~ checkIfExist', checkIfExist)
       if (checkIfExist) {
         return res.status(400).json({
           message: 'Email exist'
@@ -88,9 +85,7 @@ export default async function handler(
         },
         body: JSON.stringify(emailBody)
       })
-      console.log('🚀 ~ file: send-email.ts:91 ~ emailResult', emailResult)
       const emailJson = await emailResult.json()
-      console.log('🚀 ~ file: send-email.ts:93 ~ emailJson', emailJson)
       if (emailResult.ok && emailJson.messageId) {
         return res.status(200).json({
           message: 'Message sent'
