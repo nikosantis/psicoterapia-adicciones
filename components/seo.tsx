@@ -44,7 +44,7 @@ export default function Seo({ customMeta }: SeoProps) {
       <meta property='og:site_name' content={meta.title} />
       <meta property='og:description' content={meta.description} />
       <meta property='og:title' content={meta.title} />
-      <meta property='og:image' content={meta.image} />
+      <meta property='og:image' content={`${CANONICAL_URL}/api/og`} />
       <meta property='og:url' content={`${CANONICAL_URL}${router.asPath}`} />
 
       {meta.date && (
