@@ -9,13 +9,13 @@ export default function Comments() {
     baseValue: '',
     type: 'textarea',
     schema: commentsSchema,
-    placeholder: 'Escribe aquí tu apellido',
+    placeholder: 'Puedes escribir aquí algún comentario',
     reset: isFormSuccess
   })
 
   return (
-    <div className='w-full block'>
-      <label htmlFor='comments' className='text-sm block mb-2'>
+    <div className='block w-full'>
+      <label htmlFor='comments' className='mb-2 block text-sm'>
         Comentario
       </label>
       <Textarea id='comments' name='comments' {...inputProps} />
