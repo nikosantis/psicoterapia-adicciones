@@ -7,11 +7,11 @@ export default function Hero() {
   const { homeRef } = useScroll()
   return (
     <section
-      className='relative flex min-h-screen flex-col justify-center bg-[#cdcdcd] py-12 xl:items-center xl:py-24'
+      className='relative flex min-h-screen flex-col items-center justify-center bg-[#cdcdcd] py-12 xl:items-center xl:py-24'
       ref={homeRef}
     >
-      <div className='z-20 mx-auto mb-8 flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:mb-0 lg:px-8 xl:flex-row'>
-        <div className='w-full xl:w-6/12'>
+      <div className='z-20 mx-auto mb-8 flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:mb-0 lg:flex-row lg:px-8 xl:flex-row'>
+        <div className='w-full lg:w-6/12 xl:w-6/12'>
           <h5 className='relative mb-2 text-center text-xl font-light uppercase text-zinc-700 xl:text-left'>
             Diplomado Clínico
           </h5>
@@ -53,8 +53,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className='w-full xl:w-1/2'>
-          <div className='flex h-full xl:items-end xl:justify-end'>
+        <div className='w-full lg:w-1/2 xl:w-1/2'>
+          <div className='flex h-full justify-center lg:items-end lg:justify-end'>
             <div className='flex flex-col'>
               <div className='text-center xl:text-left'>
                 <span className='text-3xl font-semibold uppercase text-u-orange-primary-500'>
@@ -70,14 +70,14 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className='relative flex h-[200px] w-full xl:absolute xl:bottom-0 xl:left-auto xl:right-[5%] xl:z-10 xl:m-0 xl:h-[575px] xl:w-[500px]'>
+      <div className='relative flex h-[200px] w-full md:h-[575px] md:w-[500px] lg:absolute lg:right-[5%] lg:left-auto lg:bottom-0 lg:z-10 lg:h-[575px] lg:w-[500px] xl:bottom-0 xl:left-auto xl:right-[5%] xl:m-0 xl:h-[575px] xl:w-[500px]'>
         <Image
           src={introImg}
           alt='Diplomado Clínico'
           placeholder='blur'
           fill
           sizes='35vw'
-          className='object-contain'
+          className='object-contain lg:mx-auto'
         />
       </div>
     </section>
