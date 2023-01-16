@@ -2,6 +2,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import clsx from 'clsx'
 import { FaWhatsapp } from 'react-icons/fa'
 import { Roboto_Flex } from '@next/font/google'
+import { pushEvent } from 'lib/gtm'
 
 const roboto = Roboto_Flex({
   weight: 'variable',
@@ -85,6 +86,9 @@ export default function WhatsApp() {
                   target='_blank'
                   rel='noreferrer'
                   className='block cursor-text'
+                  onClick={() => {
+                    pushEvent('wspClicked')
+                  }}
                 >
                   <div className='flex h-[62px] w-full items-center justify-center rounded-b-md bg-[#f0f0f0] py-3 px-6'>
                     <div className='flex h-full w-full items-center justify-center rounded-3xl bg-white px-5'>
