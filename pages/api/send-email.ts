@@ -40,17 +40,6 @@ export default async function handler(
     )
     const reCaptchaJson = await reCaptchaRes.json()
     if (reCaptchaJson && reCaptchaJson.success && reCaptchaJson.score >= 0.5) {
-      const checkIfExist = await prisma.contact.findFirst({
-        where: {
-          email: body.email
-        }
-      })
-      if (checkIfExist) {
-        return res.status(400).json({
-          message: 'Email exist'
-        })
-      }
-
       await prisma.contact.create({
         data: {
           name: body.name,
