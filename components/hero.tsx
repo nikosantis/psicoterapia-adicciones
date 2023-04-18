@@ -18,9 +18,13 @@ export default function Hero() {
           <h1 className='mb-2" relative text-center text-3xl font-semibold uppercase text-u-blue-500 lg:text-3xl xl:text-left xl:text-4xl'>
             Psicoterapia para el Tratamiento de abuso de alcohol y drogas
           </h1>
-          <h2 className='mb-12 text-center text-xl font-medium uppercase text-zinc-700 lg:text-3xl xl:text-left'>
+          <h2 className='mb-2 text-center text-xl font-medium uppercase text-zinc-700 lg:text-3xl xl:text-left'>
             Aproximación Neuroafectiva Constructivista
           </h2>
+
+          <h3 className='mb-12 text-center text-xl font-medium uppercase text-u-orange-primary-500 lg:text-3xl xl:text-left'>
+            ¡Últimas Semanas de Admisión!
+          </h3>
 
           <div className='mb-12 flex justify-center xl:justify-start'>
             <div className='mr-3 w-1/2 xl:mr-4 xl:w-[200px]'>

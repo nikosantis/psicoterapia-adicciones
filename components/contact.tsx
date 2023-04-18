@@ -8,9 +8,12 @@ export default function Contact() {
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-wrap'>
           <div className='mb-6 w-full'>
-            <h2 className='text-center text-4xl font-medium lg:text-left'>
+            <h2 className='mb-2 text-center text-4xl font-medium lg:text-left'>
               Postula Aquí
             </h2>
+            <h3 className='text-2xl font-medium uppercase'>
+              ¡Últimas Semanas de Admisión!
+            </h3>
           </div>
 
           <div className='mb-6 w-full lg:mb-0 lg:w-6/12 lg:pr-3'>
