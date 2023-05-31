@@ -17,7 +17,7 @@ export default function Home() {
         <Modules />
         <Teachers />
         <Price />
-        <Contact />
+        {/* <Contact /> */}
       </main>
     </RootLayout>
   )
