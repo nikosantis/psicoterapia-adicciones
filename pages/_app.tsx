@@ -1,6 +1,6 @@
 import 'styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Roboto_Flex } from '@next/font/google'
+import { Roboto_Flex } from 'next/font/google'
 import clsx from 'clsx'
 import Script from 'next/script'
 

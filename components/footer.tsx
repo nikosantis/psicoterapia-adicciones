@@ -20,7 +20,7 @@ export default function Footer() {
         <div className='mb-6 w-full lg:mb-0 lg:w-7/12'>
           <div className='text-center'>
             <p className='mb-1'>
-              Unidad de Adicciones - Universidad de Santiago de Chile © 2022
+              Unidad de Adicciones - Universidad de Santiago de Chile © 2023
             </p>
             <p className='mb-1'>
               <a

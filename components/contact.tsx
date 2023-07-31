@@ -12,7 +12,7 @@ export default function Contact() {
               Postula Aquí
             </h2>
             <h3 className='text-2xl font-medium uppercase'>
-              ¡Últimas Semanas de Admisión!
+            Admisión Noviembre 2023
             </h3>
           </div>
 
@@ -24,9 +24,9 @@ export default function Contact() {
               Psiquiatras, Psicólogos/as Trabajadores Sociales)
             </p>
 
-            <p className='mb-6 text-center lg:text-left'>
+            {/* <p className='mb-6 text-center lg:text-left'>
               ¡Matrículas abiertas!
-            </p>
+            </p> */}
 
             <h3 className='mb-1 font-bold'>Duración del diplomado:</h3>
 

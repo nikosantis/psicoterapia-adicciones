@@ -23,7 +23,7 @@ export default function Hero() {
           </h2>
 
           <h3 className='mb-12 text-center text-xl font-medium uppercase text-u-orange-primary-500 lg:text-3xl xl:text-left'>
-            ¡Últimas Semanas de Admisión!
+          Admisión Noviembre 2023
           </h3>
 
           <div className='mb-12 flex justify-center xl:justify-start'>
@@ -61,9 +61,9 @@ export default function Hero() {
           <div className='flex h-full justify-center lg:items-end lg:justify-end'>
             <div className='flex flex-col'>
               <div className='text-center xl:text-left'>
-                <span className='text-3xl font-semibold uppercase text-u-orange-primary-500'>
+                {/* <span className='text-3xl font-semibold uppercase text-u-orange-primary-500'>
                   Matrículas abiertas
-                </span>
+                </span> */}
               </div>
               <div className='text-center xl:text-left'>
                 <span className='text-3xl font-semibold uppercase text-u-blue-500'>
