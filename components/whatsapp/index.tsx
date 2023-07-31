@@ -1,7 +1,7 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import clsx from 'clsx'
 import { FaWhatsapp } from 'react-icons/fa'
-import { Roboto_Flex } from '@next/font/google'
+import { Roboto_Flex } from 'next/font/google'
 import { pushEvent } from 'lib/gtm'
 
 const roboto = Roboto_Flex({
