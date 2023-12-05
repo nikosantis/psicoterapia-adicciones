@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  manifest: '/manifest.json',
+  // manifest: '/manifest.json',
 }
 
 export const viewport: Viewport = {
