@@ -1,17 +1,19 @@
-import Avatar from './avatar'
+'use client'
 
-import avatar1 from 'public/images/humberto-guajardo.png'
-import avatar2 from 'public/images/diana-kushner.png'
-import avatar3 from 'public/images/felipe-lecannelier.png'
-import avatar5 from 'public/images/constanza-espinoza.jpg'
-import { useScroll } from 'lib/contexts/scroll'
+import avatar5 from '@/public/images/constanza-espinoza.jpg'
+import avatar2 from '@/public/images/diana-kushner.png'
+import avatar3 from '@/public/images/felipe-lecannelier.png'
+import avatar1 from '@/public/images/humberto-guajardo.png'
+import avatar6 from '@/public/images/victor-ojeda.png'
+import Avatar from '@/components/avatar'
+import { useScroll } from '@/lib/contexts/scroll'
 
 export default function Teachers() {
   const { teachersRef } = useScroll()
   return (
     <section className='py-24' ref={teachersRef}>
       <div className='mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8'>
-        <div className='grid w-full grid-cols-1 gap-y-8 gap-x-6 lg:grid-cols-3'>
+        <div className='grid w-full grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3'>
           <div className='flex'>
             <Avatar
               src={avatar1}
@@ -42,6 +44,14 @@ export default function Teachers() {
               src={avatar5}
               name='Ps. Mag. Constanza Espinoza'
               content='Magister en Psicoterapia'
+            />
+          </div>
+
+          <div className='flex'>
+            <Avatar
+              src={avatar6}
+              name='Ps. Víctor Andrés Ojeda Pacheco'
+              content='Magister en Ciencias Biológicas con mención en Neurociencias de la Universidad de Valparaíso.'
             />
           </div>
         </div>

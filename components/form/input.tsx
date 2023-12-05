@@ -1,11 +1,11 @@
 'use client'
 
 import {
-  forwardRef,
+  InputHTMLAttributes as ReactInputHTMLAttributes,
   RefAttributes,
-  InputHTMLAttributes as ReactInputHTMLAttributes
+  forwardRef,
 } from 'react'
-import cx from 'clsx'
+import { cn } from '@/lib/utils'
 
 export interface IInputProps {
   valid?: boolean
@@ -43,7 +43,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       disabled,
       ...rest
     },
-    ref
+    ref,
   ) => {
     return (
       <input
@@ -58,19 +58,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         required={required}
         aria-required={required}
         aria-describedby={ariaDescribedby}
-        className={cx(
-          'w-full rounded block border-slate-300 text-sm outline-none',
-          'focus:outline-none focus:ring-0 focus:shadow-none',
+        className={cn(
+          'block w-full rounded border-slate-300 text-sm outline-none',
+          'focus:shadow-none focus:outline-none focus:ring-0',
           'transition-all',
           {
             'border-green-400 focus:border-green-400': valid,
-            'border-red-400 focus:border-red-400': !valid && invalid
-          }
+            'border-red-400 focus:border-red-400': !valid && invalid,
+          },
         )}
         {...rest}
       />
     )
-  }
+  },
 )
 
 Input.displayName = 'Input'

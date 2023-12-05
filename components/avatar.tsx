@@ -1,3 +1,5 @@
+'use client'
+
 import Image, { StaticImageData } from 'next/image'
 
 type AvatarProps = {
@@ -9,8 +11,8 @@ type AvatarProps = {
 
 export default function Avatar({ src, name, title, content }: AvatarProps) {
   return (
-    <div className='w-full flex flex-col items-center'>
-      <div className='overflow-hidden w-[200px] h-[200px] relative rounded-full mb-6'>
+    <div className='flex w-full flex-col items-center'>
+      <div className='relative mb-6 h-[200px] w-[200px] overflow-hidden rounded-full'>
         <Image
           src={src}
           placeholder='blur'
@@ -18,13 +20,13 @@ export default function Avatar({ src, name, title, content }: AvatarProps) {
           fill
           sizes='(max-width: 768px) 100vw,
           25vw'
-          className='object-cover rounded-full'
+          className='rounded-full object-cover'
         />
       </div>
 
       <div className='text-center'>
-        <h4 className='font-medium mb-2'>{name}</h4>
-        {title && <h5 className='font-bold mb-1 text-sm'>{title}</h5>}
+        <h4 className='mb-2 font-medium'>{name}</h4>
+        {title && <h5 className='mb-1 text-sm font-bold'>{title}</h5>}
         <p className='mb-1 text-sm'>{content}</p>
       </div>
     </div>

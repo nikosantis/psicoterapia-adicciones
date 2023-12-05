@@ -1,5 +1,7 @@
+'use client'
+
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
-import { z } from 'zod'
+import { BaseSchema, ValiError, flatten, parseAsync } from 'valibot'
 
 type InputTypeText = 'text'
 type InputTypeEmail = 'email'
@@ -18,7 +20,7 @@ type InputTypeInterface<T extends InputType> = T extends InputTypeTextarea
 type UseInputProps = {
   baseValue: string
   type: InputType
-  schema?: z.ZodTypeAny
+  schema?: BaseSchema
   placeholder?: string
   defaultValue?: string
   reset?: boolean
@@ -33,7 +35,7 @@ export function useInput({
   placeholder,
   reset,
   handleValidate,
-  handleChange
+  handleChange,
 }: UseInputProps) {
   const [initialRender, setInitialRender] = useState(true)
   const [value, setValue] = useState<typeof baseValue>(() => baseValue)
@@ -66,7 +68,7 @@ export function useInput({
   const resolver = useCallback(async () => {
     if (!schema) return
     try {
-      const result = await schema.parseAsync(value)
+      const result = await parseAsync(schema, value)
       if (result) {
         setErrors(null)
         setIsSuccess(true)
@@ -75,13 +77,11 @@ export function useInput({
         }
       }
     } catch (err) {
-      if (err instanceof z.ZodError) {
+      if (err instanceof ValiError) {
         setIsSuccess(false)
-        const _errors = err.format()._errors
-        setErrors(_errors.filter(x => (x === ' ' ? null : x)))
-        if (handleValidate) {
-          handleValidate(false)
-        }
+        const valibotError = flatten(err)
+        const _errors = valibotError
+        _errors.root && setErrors(_errors.root)
       }
     }
   }, [schema, value, handleValidate])
@@ -101,22 +101,22 @@ export function useInput({
         handleChange(event.target.value)
       }
     },
-    [handleChange]
+    [handleChange],
   )
   const inputProps = useMemo(
     () => ({
       onChange,
       value,
       type: type === 'textarea' ? undefined : type,
-      placeholder
+      placeholder,
     }),
-    [placeholder, type, value, onChange]
+    [placeholder, type, value, onChange],
   )
 
   return {
     inputProps: inputProps,
     errors,
     hasErrors: errors ? errors.length > 0 : false,
-    isSuccess: isSuccess
+    isSuccess: isSuccess,
   }
 }

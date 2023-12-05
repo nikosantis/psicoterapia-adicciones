@@ -1,9 +1,11 @@
+'use client'
+
 import {
-  forwardRef,
+  TextareaHTMLAttributes as ReactTextareaHTMLAttributes,
   RefAttributes,
-  TextareaHTMLAttributes as ReactTextareaHTMLAttributes
+  forwardRef,
 } from 'react'
-import cx from 'clsx'
+import { cn } from '@/lib/utils'
 
 export interface ITextareaProps {
   valid?: boolean
@@ -37,7 +39,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       disabled,
       ...rest
     },
-    ref
+    ref,
   ) => {
     return (
       <textarea
@@ -51,19 +53,19 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         required={required}
         aria-required={required}
         aria-describedby={ariaDescribedby}
-        className={cx(
-          'relative rounded w-full text-sm block border-slate-300 outline-none',
-          'focus:outline-none focus:ring-0 focus:shadow-none',
+        className={cn(
+          'relative block w-full rounded border-slate-300 text-sm outline-none',
+          'focus:shadow-none focus:outline-none focus:ring-0',
           'transition-all',
           {
             'border-green-400 focus:border-green-400': valid,
-            'border-red-400 focus:border-red-400': !valid && invalid
-          }
+            'border-red-400 focus:border-red-400': !valid && invalid,
+          },
         )}
         {...rest}
       />
     )
-  }
+  },
 )
 
 Textarea.displayName = 'Textarea'

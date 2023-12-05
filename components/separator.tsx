@@ -1,3 +1,5 @@
+'use client'
+
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
 export default function Separator() {

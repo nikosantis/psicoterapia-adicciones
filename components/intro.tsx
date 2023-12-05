@@ -1,8 +1,9 @@
-import { FiEdit, FiClock, FiCalendar } from 'react-icons/fi'
-import { MdLaptopMac } from 'react-icons/md'
+'use client'
 
-import { useScroll } from 'lib/contexts/scroll'
-import IntroElement from './intro-element'
+import { FiCalendar, FiClock, FiEdit } from 'react-icons/fi'
+import { MdLaptopMac } from 'react-icons/md'
+import IntroElement from '@/components/intro-element'
+import { useScroll } from '@/lib/contexts/scroll'
 
 export default function Intro() {
   const { aboutRef } = useScroll()
@@ -13,7 +14,7 @@ export default function Intro() {
           <h5 className='relative mb-2 text-center text-xl font-light uppercase text-zinc-700'>
             Diplomado Clínico
           </h5>
-          <h2 className='relative mb-12 text-center text-3xl font-semibold uppercase text-u-blue-500 lg:text-3xl xl:text-4xl'>
+          <h2 className='text-u-blue-500 relative mb-12 text-center text-3xl font-semibold uppercase lg:text-3xl xl:text-4xl'>
             Psicoterapia para el Tratamiento de abuso de alcohol y drogas
           </h2>
           <p className='mb-4 text-center'>
@@ -57,7 +58,7 @@ export default function Intro() {
           <IntroElement
             icon={<FiCalendar fontSize='30' color='#fff' />}
             title='Inicio y término de clases'
-            text='Abril 2023 a diciembre 2023'
+            text='Abril a diciembre 2024'
           />
         </div>
       </div>

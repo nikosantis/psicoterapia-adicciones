@@ -1,7 +1,8 @@
-import clsx from 'clsx'
+'use client'
 
-import { useScroll } from 'lib/contexts/scroll'
-import { navigation } from 'lib/navigation'
+import clsx from 'clsx'
+import { navigation } from '@/lib/constants'
+import { useScroll } from '@/lib/contexts/scroll'
 
 export default function Nav() {
   const { handleScrollTo, sectionActive } = useScroll()
@@ -16,11 +17,11 @@ export default function Nav() {
             key={navi.id}
             onClick={() => handleScrollTo(navi.scrollTo)}
             className={clsx(
-              'py-2 px-3 uppercase transition-all',
+              'px-3 py-2 uppercase transition-all',
               isActive
-                ? 'text-zinc-700 underline decoration-u-orange-primary-500 decoration-[3px] underline-offset-4'
+                ? 'decoration-u-orange-primary-500 text-zinc-700 underline decoration-[3px] underline-offset-4'
                 : 'font-normal text-zinc-500',
-              'hover:text-slate-700'
+              'hover:text-slate-700',
             )}
           >
             {navi.title}

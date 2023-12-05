@@ -1,13 +1,17 @@
+'use client'
+
+import { Roboto_Flex } from 'next/font/google'
+import Image from 'next/image'
+import iconWsp from '@/public/images/icon-wsp.png'
+import { sendGTMEvent } from '@next/third-parties/google'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import clsx from 'clsx'
 import { FaWhatsapp } from 'react-icons/fa'
-import { Roboto_Flex } from 'next/font/google'
-import { pushEvent } from 'lib/gtm'
 
 const roboto = Roboto_Flex({
   weight: 'variable',
   variable: '--font-roboto',
-  subsets: ['latin']
+  subsets: ['latin'],
 })
 
 export default function WhatsApp() {
@@ -17,13 +21,13 @@ export default function WhatsApp() {
         <DropdownMenu.Trigger asChild>
           <button
             className={clsx(
-              'rounded-full bg-wsp-500 p-4 text-white shadow-md transition-all',
+              'bg-wsp-500 rounded-full p-4 text-white shadow-md transition-all',
               'focus:outline-none focus-visible:ring-0',
               'hover:bg-wsp-600',
               'radix-state-open:bg-wsp-700',
               'radix-state-on:bg-wsp-700',
               'radix-state-delayed-open:bg-wsp-700 radix-state-instant-open:bg-wsp-700',
-              'inline-flex items-center justify-center'
+              'inline-flex items-center justify-center',
             )}
             aria-label='Contactar por WhatsApp'
           >
@@ -40,12 +44,18 @@ export default function WhatsApp() {
               roboto.variable,
               'radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up',
               'shadow-md6 w-96 rounded-md',
-              'relative z-50 font-sans'
+              'relative z-50 font-sans',
             )}
           >
             <DropdownMenu.Item className='flex w-full flex-col'>
               <div className='flex rounded-t-md bg-[#075e54] p-2'>
-                <div className='mr-2 h-[40px] w-[40px] rounded-full bg-white'></div>
+                <div className='mr-2 h-[40px] w-[40px] rounded-full bg-white'>
+                  <Image
+                    src={iconWsp}
+                    alt='Admisión 2024 WhatsApp'
+                    className='rounded-full'
+                  />
+                </div>
                 <div className='flex flex-col text-left text-white'>
                   <div>
                     <span className='font-bold'>WhatsApp Admisión</span>
@@ -65,13 +75,13 @@ export default function WhatsApp() {
                           Hola <br />
                           ¿Necesitas más información del diplomado?
                         </div>
-                        <div className='-mt-3 -mb-2 self-end'>
+                        <div className='-mb-2 -mt-3 self-end'>
                           <span className='text-xs text-zinc-400'>
                             {new Date().toLocaleTimeString('es-CL', {
                               hour: 'numeric',
                               minute: 'numeric',
                               hour12: false,
-                              timeZone: 'America/Santiago'
+                              timeZone: 'America/Santiago',
                             })}
                           </span>
                         </div>
@@ -87,10 +97,10 @@ export default function WhatsApp() {
                   rel='noreferrer'
                   className='block cursor-text'
                   onClick={() => {
-                    pushEvent('wspClicked')
+                    sendGTMEvent({ event: 'wspClicked' })
                   }}
                 >
-                  <div className='flex h-[62px] w-full items-center justify-center rounded-b-md bg-[#f0f0f0] py-3 px-6'>
+                  <div className='flex h-[62px] w-full items-center justify-center rounded-b-md bg-[#f0f0f0] px-6 py-3'>
                     <div className='flex h-full w-full items-center justify-center rounded-3xl bg-white px-5'>
                       <div className='w-full'>
                         <span className='text-sm text-slate-500'>

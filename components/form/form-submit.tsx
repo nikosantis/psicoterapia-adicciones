@@ -1,17 +1,19 @@
+'use client'
+
+import Script from 'next/script'
 import {
-  useCallback,
-  useState,
-  useRef,
-  createContext,
   ReactNode,
   SyntheticEvent,
-  useContext
+  createContext,
+  useCallback,
+  useContext,
+  useRef,
+  useState,
 } from 'react'
-import Script from 'next/script'
+import { sendGTMEvent } from '@next/third-parties/google'
 import { useReCaptcha } from 'next-recaptcha-v3'
-
-import { formSchema } from 'lib/schemas/contact-form-schema'
-import { pushEvent } from 'lib/gtm'
+import { safeParseAsync } from 'valibot'
+import { FormSchema } from '@/lib/validations'
 
 interface FormContext {
   isFormValid: boolean
@@ -60,10 +62,10 @@ export default function FormSubmit({ children }: FormSubmitProps) {
           .value,
         email: (elements.namedItem('email') as HTMLInputElement).value,
         phone: (elements.namedItem('phone') as HTMLInputElement).value,
-        comments: (elements.namedItem('comments') as HTMLTextAreaElement).value
+        comments: (elements.namedItem('comments') as HTMLTextAreaElement).value,
       }
       try {
-        const { success } = await formSchema.safeParseAsync(formElements)
+        const { success } = await safeParseAsync(FormSchema, formElements)
         setFormValid(success)
       } catch (err) {}
     }
@@ -88,7 +90,7 @@ export default function FormSubmit({ children }: FormSubmitProps) {
                 const response = await fetch('/api/send-email', {
                   method: 'POST',
                   headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                   },
                   body: JSON.stringify({
                     name: targets.name.value,
@@ -96,15 +98,15 @@ export default function FormSubmit({ children }: FormSubmitProps) {
                     phone: targets.phone.value,
                     profession: targets.profession.value,
                     comments: targets.comments.value,
-                    token
-                  })
+                    token,
+                  }),
                 })
 
                 const resJson = await response.json()
                 if (response.ok && resJson) {
                   setSuccess(true)
                   setLoading(false)
-                  pushEvent('submitOk')
+                  sendGTMEvent({ event: 'submitOk' })
                 } else if (resJson.message === 'Email exist') {
                   setIsExist(true)
                   setLoading(false)
@@ -122,7 +124,7 @@ export default function FormSubmit({ children }: FormSubmitProps) {
         setError('Error al intentar enviar el formulario')
       }
     },
-    []
+    [],
   )
 
   return (
@@ -145,7 +147,7 @@ export default function FormSubmit({ children }: FormSubmitProps) {
           errorMsg,
           isSuccess,
           isError,
-          isExist
+          isExist,
         }}
       >
         {children}

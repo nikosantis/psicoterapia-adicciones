@@ -1,4 +1,6 @@
-import { useScroll } from 'lib/contexts/scroll'
+'use client'
+
+import { useScroll } from '@/lib/contexts/scroll'
 
 export default function Prices() {
   const { pricesRef } = useScroll()
@@ -9,7 +11,7 @@ export default function Prices() {
           <div className='flex flex-col items-center justify-start text-center'>
             <div className='w-full rounded-lg bg-slate-50 p-8'>
               <h4 className='mb-2 text-xl font-bold'>Arancel</h4>
-              <p>$1.450.000.-</p>
+              <p>$1.550.000.-</p>
               <small>(incluye matrícula y certificación)</small>
             </div>
           </div>
@@ -22,7 +24,7 @@ export default function Prices() {
                   Pago contado 10% descuento (débito, transferencia electrónica
                   o tarjeta de crédito)
                 </li>
-                <li>Pago hasta en 10 cuotas de $145.000.- c/u con Letra.</li>
+                <li>Pago hasta en 10 cuotas de $155.000.- c/u.</li>
               </ul>
             </div>
           </div>
@@ -35,7 +37,7 @@ export default function Prices() {
               <a
                 href='https://drive.google.com/file/d/1SdfEejRQskrnluYl_cDWGq4GMMiRA9T2/view?usp=share_link'
                 target='_blank'
-                className='select-none rounded bg-u-orange-primary-500 py-2 px-3 text-center font-medium text-white transition-all hover:bg-u-orange-primary-700'
+                className='bg-u-orange-primary-500 hover:bg-u-orange-primary-700 select-none rounded px-3 py-2 text-center font-medium text-white transition-all'
                 rel='noreferrer'
               >
                 Descargar

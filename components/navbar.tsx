@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import Image from 'next/image'
+'use client'
 
-import { MobileProvider } from 'lib/contexts/mobile'
-import Header from 'components/header'
-import { seoMetas } from 'lib/seo-metas'
-import logoImg from 'public/images/fcm-logo.png'
-import Nav from './nav'
-import NavbarToggler from './form/navbar-toggler'
+import Image from 'next/image'
+import Link from 'next/link'
+import logoImg from '@/public/images/fcm-logo.png'
+import { TITLE } from '@/lib/constants'
+import { MobileProvider } from '@/lib/contexts/mobile'
+import Header from './header'
 import MobileNav from './mobile-nav'
+import Nav from './nav'
 
 export default function Navbar() {
   return (
@@ -17,12 +17,12 @@ export default function Navbar() {
           <div className='mx-auto flex max-w-7xl justify-between px-4 sm:px-6 lg:px-8'>
             <Link
               href='/'
-              title={seoMetas.title}
+              title={TITLE}
               className='relative block h-[60px] w-[220px] xl:h-[60px] xl:w-[300px]'
             >
               <Image
                 src={logoImg}
-                alt={seoMetas.title}
+                alt={TITLE}
                 placeholder='blur'
                 priority
                 fill
@@ -33,12 +33,9 @@ export default function Navbar() {
 
             <div className='flex'>
               <Nav />
-
-              <NavbarToggler />
+              <MobileNav />
             </div>
           </div>
-
-          <MobileNav />
         </nav>
       </Header>
     </MobileProvider>

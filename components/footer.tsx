@@ -1,6 +1,7 @@
-import Image from 'next/image'
+'use client'
 
-import logoBlanco from 'public/images/logo-blanco.png'
+import Image from 'next/image'
+import logoBlanco from '@/public/images/logo-blanco.png'
 
 export default function Footer() {
   return (
@@ -20,7 +21,7 @@ export default function Footer() {
         <div className='mb-6 w-full lg:mb-0 lg:w-7/12'>
           <div className='text-center'>
             <p className='mb-1'>
-              Unidad de Adicciones - Universidad de Santiago de Chile © 2023
+              Unidad de Adicciones - Universidad de Santiago de Chile © 2024
             </p>
             <p className='mb-1'>
               <a

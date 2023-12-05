@@ -1,4 +1,6 @@
-import { useScroll } from 'lib/contexts/scroll'
+'use client'
+
+import { useScroll } from '@/lib/contexts/scroll'
 import ContactForm from './contact-form'
 
 export default function Contact() {
@@ -12,7 +14,7 @@ export default function Contact() {
               Postula Aquí
             </h2>
             <h3 className='text-2xl font-medium uppercase'>
-            Admisión Noviembre 2023
+              Admisión Noviembre 2023
             </h3>
           </div>
 
@@ -50,7 +52,7 @@ export default function Contact() {
           </div>
 
           <div className='w-full lg:w-6/12 lg:pl-3'>
-            <div className='rounded-md bg-slate-100 py-12 px-8'>
+            <div className='rounded-md bg-slate-100 px-8 py-12'>
               <ContactForm />
             </div>
           </div>

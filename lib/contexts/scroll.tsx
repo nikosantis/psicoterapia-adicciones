@@ -1,11 +1,13 @@
+'use client'
+
 import {
-  createContext,
   ReactNode,
   RefObject,
+  createContext,
   useCallback,
   useContext,
   useRef,
-  useState
+  useState,
 } from 'react'
 
 interface ScrollContext {
@@ -50,12 +52,12 @@ export function ScrollProvider({ children }: ScrollProviderProps) {
       modules: modulesRef,
       teachers: teachersRef,
       contact: contactRef,
-      prices: pricesRef
+      prices: pricesRef,
     }
     const scrollToRef = scrollToRefs[scrollTo]
     if (scrollToRef.current) {
       scrollToRef.current.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
       })
       setSection(scrollTo)
     }
@@ -71,7 +73,7 @@ export function ScrollProvider({ children }: ScrollProviderProps) {
         contactRef,
         pricesRef,
         handleScrollTo,
-        sectionActive
+        sectionActive,
       }}
     >
       {children}

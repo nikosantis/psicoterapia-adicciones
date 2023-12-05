@@ -1,4 +1,3 @@
-import { MobileProvider } from 'lib/contexts/mobile'
 import { ReactNode } from 'react'
 
 type HeaderProps = {
@@ -7,14 +6,12 @@ type HeaderProps = {
 
 export default function Header({ children }: HeaderProps) {
   return (
-    <MobileProvider>
-      <header className='sticky top-0 z-50 w-full'>
-        <div className='flex h-[10px]'>
-          <div className='flex-1 bg-u-blue-500' />
-          <div className='flex-[1_1_60%] bg-u-orange-primary-500' />
-        </div>
-        {children}
-      </header>
-    </MobileProvider>
+    <header className='sticky top-0 z-50 w-full'>
+      <div className='flex h-[10px]'>
+        <div className='bg-u-blue-500 flex-1' />
+        <div className='bg-u-orange-primary-500 flex-[1_1_60%]' />
+      </div>
+      {children}
+    </header>
   )
 }

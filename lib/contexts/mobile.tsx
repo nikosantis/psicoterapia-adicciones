@@ -1,10 +1,12 @@
+'use client'
+
 import {
-  createContext,
-  ReactNode,
-  useState,
   Dispatch,
+  ReactNode,
   SetStateAction,
-  useContext
+  createContext,
+  useContext,
+  useState,
 } from 'react'
 
 interface MobileContext {

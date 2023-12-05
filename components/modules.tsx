@@ -1,4 +1,6 @@
-import { useScroll } from 'lib/contexts/scroll'
+'use client'
+
+import { useScroll } from '@/lib/contexts/scroll'
 
 export default function Modules() {
   const { modulesRef } = useScroll()

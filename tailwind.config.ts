@@ -1,16 +1,16 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+import { type Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './layouts/**/*.{js,ts,jsx,tsx}'
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-roboto)', ...fontFamily.sans]
+        sans: ['var(--font-roboto)', ...fontFamily.sans],
       },
       colors: {
         'u-orange': {
@@ -23,7 +23,7 @@ module.exports = {
           600: '#eb9943',
           700: '#e18f39',
           800: '#d7852f',
-          900: '#cd7b25'
+          900: '#cd7b25',
         },
         'u-orange-primary': {
           50: '#ffa832',
@@ -35,7 +35,7 @@ module.exports = {
           600: '#e06c00',
           700: '#d66200',
           800: '#cc5800',
-          900: '#c24e00'
+          900: '#c24e00',
         },
         'u-orange-secondary': {
           50: '#ce8032',
@@ -47,7 +47,7 @@ module.exports = {
           600: '#924400',
           700: '#883a00',
           800: '#7e3000',
-          900: '#742600'
+          900: '#742600',
         },
         'u-blue': {
           50: '#32619e',
@@ -59,7 +59,7 @@ module.exports = {
           600: '#002562',
           700: '#001b58',
           800: '#00114e',
-          900: '#000744'
+          900: '#000744',
         },
         wsp: {
           50: '#57ff98',
@@ -71,24 +71,25 @@ module.exports = {
           600: '#1bc95c',
           700: '#11bf52',
           800: '#07b548',
-          900: '#00ab3e'
-        }
+          900: '#00ab3e',
+        },
       },
       keyframes: {
         'slide-down': {
-          '0%': { opacity: 0, transform: 'translateY(-10px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' }
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         'slide-up': {
-          '0%': { opacity: 0, transform: 'translateY(10px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' }
-        }
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         'slide-down': 'slide-down 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-        'slide-up': 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
-      }
-    }
+        'slide-up': 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+    },
   },
-  plugins: [require('@tailwindcss/forms'), require('tailwindcss-radix')()]
+  plugins: [require('@tailwindcss/forms'), require('tailwindcss-radix')()],
 }
+export default config

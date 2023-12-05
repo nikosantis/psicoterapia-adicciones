@@ -1,10 +1,12 @@
-import Image from 'next/image'
+'use client'
 
-import { useScroll } from 'lib/contexts/scroll'
-import introImg from 'public/images/intro.png'
+import Image from 'next/image'
+import introImg from '@/public/images/intro.png'
+import { useScroll } from '@/lib/contexts/scroll'
 
 export default function Hero() {
   const { homeRef } = useScroll()
+
   return (
     <section
       className='relative flex min-h-screen flex-col items-center justify-center bg-[#cdcdcd] py-12 xl:items-center xl:py-24'
@@ -15,23 +17,23 @@ export default function Hero() {
           <h5 className='relative mb-2 text-center text-xl font-light uppercase text-zinc-700 xl:text-left'>
             Diplomado Clínico
           </h5>
-          <h1 className='mb-2" relative text-center text-3xl font-semibold uppercase text-u-blue-500 lg:text-3xl xl:text-left xl:text-4xl'>
+          <h1 className='mb-2" text-u-blue-500 relative text-center text-3xl font-semibold uppercase lg:text-3xl xl:text-left xl:text-4xl'>
             Psicoterapia para el Tratamiento de abuso de alcohol y drogas
           </h1>
           <h2 className='mb-2 text-center text-xl font-medium uppercase text-zinc-700 lg:text-3xl xl:text-left'>
             Aproximación Neuroafectiva Constructivista
           </h2>
 
-          <h3 className='mb-12 text-center text-xl font-medium uppercase text-u-orange-primary-500 lg:text-3xl xl:text-left'>
-          Admisión Noviembre 2023
+          <h3 className='text-u-orange-primary-500 mb-12 text-center text-xl font-medium uppercase lg:text-3xl xl:text-left'>
+            Admisión 2024
           </h3>
 
           <div className='mb-12 flex justify-center xl:justify-start'>
             <div className='mr-3 w-1/2 xl:mr-4 xl:w-[200px]'>
-              <div className='mb-4 w-full rounded-tl-3xl bg-u-blue-500 py-3 px-4'>
+              <div className='bg-u-blue-500 mb-4 w-full rounded-tl-3xl px-4 py-3'>
                 <span className='uppercase text-white'>Metodología</span>
               </div>
-              <div className='px-6 uppercase text-u-blue-500'>
+              <div className='text-u-blue-500 px-6 uppercase'>
                 <ul className='list-disc'>
                   <li>Clases</li>
                   <li>Seminarios</li>
@@ -42,10 +44,10 @@ export default function Hero() {
               </div>
             </div>
             <div className='w-1/2 xl:w-[200px]'>
-              <div className='mb-4 w-full rounded-br-3xl bg-u-blue-500 py-3 px-4'>
+              <div className='bg-u-blue-500 mb-4 w-full rounded-br-3xl px-4 py-3'>
                 <span className='uppercase text-white'>Dirigido a</span>
               </div>
-              <div className='px-6 uppercase text-u-blue-500'>
+              <div className='text-u-blue-500 px-6 uppercase'>
                 <ul className='list-disc'>
                   <li>Psicólogos</li>
                   <li>Psiquiatras</li>
@@ -66,7 +68,7 @@ export default function Hero() {
                 </span> */}
               </div>
               <div className='text-center xl:text-left'>
-                <span className='text-3xl font-semibold uppercase text-u-blue-500'>
+                <span className='text-u-blue-500 text-3xl font-semibold uppercase'>
                   100% Online
                 </span>
               </div>
@@ -74,7 +76,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className='relative flex h-[200px] w-full md:h-[575px] md:w-[500px] lg:absolute lg:right-[5%] lg:left-auto lg:bottom-0 lg:z-10 lg:h-[575px] lg:w-[500px] xl:bottom-0 xl:left-auto xl:right-[5%] xl:m-0 xl:h-[575px] xl:w-[500px]'>
+      <div className='relative flex h-[200px] w-full md:h-[575px] md:w-[500px] lg:absolute lg:bottom-0 lg:left-auto lg:right-[5%] lg:z-10 lg:h-[575px] lg:w-[500px] xl:bottom-0 xl:left-auto xl:right-[5%] xl:m-0 xl:h-[575px] xl:w-[500px]'>
         <Image
           src={introImg}
           alt='Diplomado Clínico'

@@ -1,6 +1,5 @@
 import clsx from 'clsx'
-
-import Spin from 'components/spin'
+import Spin from '@/components/spin'
 import { useFormContext } from './form-submit'
 
 export default function SubmitButton() {
@@ -10,9 +9,9 @@ export default function SubmitButton() {
       type='submit'
       disabled={!isFormValid || isLoading}
       className={clsx(
-        'py-2 px-3 bg-u-orange-primary-500 text-white select-none rounded font-medium text-center transition-all hover:bg-u-orange-primary-700',
-        'disabled:cursor-not-allowed disabled:select-none disabled:bg-u-orange-primary-500/40 disabled:pointer-events-none',
-        'inline-flex'
+        'bg-u-orange-primary-500 hover:bg-u-orange-primary-700 select-none rounded px-3 py-2 text-center font-medium text-white transition-all',
+        'disabled:bg-u-orange-primary-500/40 disabled:pointer-events-none disabled:cursor-not-allowed disabled:select-none',
+        'inline-flex',
       )}
       form='contact-form'
     >

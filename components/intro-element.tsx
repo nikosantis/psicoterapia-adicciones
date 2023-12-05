@@ -1,3 +1,5 @@
+'use client'
+
 type IntroElementProps = {
   icon: JSX.Element
   title: string
@@ -9,12 +11,12 @@ export default function IntroElement({
   icon,
   title,
   text,
-  extra
+  extra,
 }: IntroElementProps) {
   return (
     <div className='w-fll flex flex-col'>
       <div className='mb-3 flex justify-center'>
-        <div className='flex items-center justify-center rounded-full bg-u-orange-primary-500 p-4'>
+        <div className='bg-u-orange-primary-500 flex items-center justify-center rounded-full p-4'>
           {icon}
         </div>
       </div>
