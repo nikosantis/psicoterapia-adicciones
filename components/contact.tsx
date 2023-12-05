@@ -14,7 +14,7 @@ export default function Contact() {
               Postula Aquí
             </h2>
             <h3 className='text-2xl font-medium uppercase'>
-              Admisión Noviembre 2023
+              Admisión Noviembre 2024
             </h3>
           </div>
 
@@ -30,7 +30,7 @@ export default function Contact() {
               ¡Matrículas abiertas!
             </p> */}
 
-            <h3 className='mb-1 font-bold'>Duración del diplomado:</h3>
+            {/* <h3 className='mb-1 font-bold'>Duración del diplomado:</h3>
 
             <p className='mb-4 text-center lg:text-left'>
               189 horas (pedagógicas y autónomas)
@@ -42,13 +42,13 @@ export default function Contact() {
 
             <h3 className='mb-1 font-bold'>Inicio de clases:</h3>
 
-            <p className='mb-4 text-center lg:text-left'>19 de abril 2023</p>
+            <p className='mb-4 text-center lg:text-left'>19 de abril 2024</p>
 
             <h3 className='mb-1 font-bold'>Término de clases:</h3>
 
             <p className='mb-4 text-center lg:text-left'>
-              13 de diciembre 2023
-            </p>
+              13 de diciembre 2024
+            </p> */}
           </div>
 
           <div className='w-full lg:w-6/12 lg:pl-3'>
