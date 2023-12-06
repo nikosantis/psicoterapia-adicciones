@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useScroll } from '@/lib/contexts/scroll'
 
 export default function Prices() {
@@ -34,14 +35,14 @@ export default function Prices() {
               <h4 className='mb-4 text-xl font-bold'>
                 Información del diplomado
               </h4>
-              <a
-                href='https://drive.google.com/file/d/1SdfEejRQskrnluYl_cDWGq4GMMiRA9T2/view?usp=share_link'
+              <Link
+                href='https://drive.google.com/file/d/1dpC-x0zIysvi-3y3uIA_7RjPcRbyvK8s/view?usp=sharing'
                 target='_blank'
-                className='bg-u-orange-primary-500 hover:bg-u-orange-primary-700 select-none rounded px-3 py-2 text-center font-medium text-white transition-all'
+                className='select-none rounded bg-u-orange-primary-500 px-3 py-2 text-center font-medium text-white transition-all hover:bg-u-orange-primary-700'
                 rel='noreferrer'
               >
                 Descargar
-              </a>
+              </Link>
             </div>
           </div>
         </div>

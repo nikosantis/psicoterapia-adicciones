@@ -19,7 +19,7 @@ export default function Teachers() {
               src={avatar1}
               name='Prof. Dr. Humberto Guajardo Sáinz'
               title='Director'
-              content='Médico Psiquiatra. Decano de la Facultad de Ciencias Médicas de la Universidad de Santiago.'
+              content='Médico Psiquiatra'
             />
           </div>
 
@@ -51,7 +51,7 @@ export default function Teachers() {
             <Avatar
               src={avatar6}
               name='Ps. Víctor Andrés Ojeda Pacheco'
-              content='Magister en Ciencias Biológicas con mención en Neurociencias de la Universidad de Valparaíso.'
+              content='Magister en Ciencias Biológicas con mención en Neurociencias de la Universidad de Valparaíso'
             />
           </div>
         </div>
