@@ -13,9 +13,7 @@ export default function Contact() {
             <h2 className='mb-2 text-center text-4xl font-medium lg:text-left'>
               Postula Aquí
             </h2>
-            <h3 className='text-2xl font-medium uppercase'>
-              Admisión Noviembre 2024
-            </h3>
+            <h3 className='text-2xl font-medium uppercase'>Admisión 2024</h3>
           </div>
 
           <div className='mb-6 w-full lg:mb-0 lg:w-6/12 lg:pr-3'>
