@@ -1,17 +1,18 @@
 import { useInput } from '@/lib/hooks/use-input'
-import { cn } from '@/lib/utils'
 import { MessageSchema } from '@/lib/validations'
-import { useFormContext } from './form-submit'
+import { useFormStateContext } from './form-context'
 import Textarea from './textarea'
 
 export default function Comments() {
-  const { isSuccess: isFormSuccess } = useFormContext()
+  const {
+    state: { status },
+  } = useFormStateContext()
   const { inputProps } = useInput({
     baseValue: '',
     type: 'textarea',
     schema: MessageSchema,
     placeholder: 'Puedes escribir aquí algún comentario',
-    reset: isFormSuccess,
+    reset: status === 'success',
   })
 
   return (

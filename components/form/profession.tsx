@@ -1,17 +1,19 @@
 import { useInput } from '@/lib/hooks/use-input'
 import { cn } from '@/lib/utils'
 import { ProfessionSchema } from '@/lib/validations'
-import { useFormContext } from './form-submit'
+import { useFormStateContext } from './form-context'
 import Input from './input'
 
 export default function Profession() {
-  const { isSuccess: isFormSuccess } = useFormContext()
+  const {
+    state: { status },
+  } = useFormStateContext()
   const { inputProps, errors, hasErrors, isSuccess } = useInput({
     baseValue: '',
     type: 'text',
     schema: ProfessionSchema,
     placeholder: 'Escribe aquí tu profesión',
-    reset: isFormSuccess,
+    reset: status === 'success',
   })
 
   return (

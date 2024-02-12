@@ -1,48 +1,83 @@
-import { Fragment } from 'react'
-import { useFormContext } from './form-submit'
+import { useEffect } from 'react'
+import { cn } from '@/lib/utils'
+import {
+  type FormState,
+  useFormDispatchContext,
+  useFormStateContext,
+} from './form-context'
+
+const alertStatusMap = {
+  warning: cn('bg-yellow-100 text-yellow-700'),
+  danger: cn('bg-red-100 text-red-700'),
+  success: cn('bg-green-100 text-green-700'),
+}
+
+function AlertComponent({
+  status,
+  title,
+  message,
+}: {
+  status: 'warning' | 'danger' | 'success'
+  title: string
+  message: string
+}) {
+  return (
+    <div className='mt-6 w-full'>
+      <div
+        className={cn('mb-4 rounded-lg p-4 text-sm', alertStatusMap[status])}
+        role='alert'
+      >
+        <span className='mr-1 font-medium'>{title}</span>
+        {message}
+      </div>
+    </div>
+  )
+}
+
+const statusMessagesMap: Record<
+  FormState['status'],
+  {
+    status: 'warning' | 'danger' | 'success'
+    title: string
+    message: string
+  } | null
+> = {
+  exist: {
+    status: 'warning',
+    title: '¡Ya nos has contactado!',
+    message: 'Si necesitas más información, contáctanos por los otros medios.',
+  },
+  success: {
+    status: 'success',
+    title: '¡Formulario enviado!',
+    message: 'Pronto nos contactaremos.',
+  },
+  error: {
+    status: 'danger',
+    title: '¡Error al enviar el formulario!',
+    message: 'Por favor inténtalo nuevamente.',
+  },
+  idle: null,
+  loading: null,
+}
 
 export default function Alert() {
-  const { isError, isSuccess, isExist } = useFormContext()
+  const {
+    state: { status },
+  } = useFormStateContext()
+  const { reset } = useFormDispatchContext()
 
-  return (
-    <>
-      {isExist && (
-        <div className='mt-6 w-full'>
-          <div
-            className='mb-4 rounded-lg bg-yellow-100 p-4 text-sm text-yellow-700 dark:bg-yellow-200 dark:text-yellow-800'
-            role='alert'
-          >
-            <span className='mr-1 font-medium'>¡Ya estás registrado!</span>
-            Si necesitas más información, contáctanos por los otros medios.
-          </div>
-        </div>
-      )}
+  const alertMessages = statusMessagesMap[status]
 
-      {isSuccess && (
-        <div className='mt-6 w-full'>
-          <div
-            className='rounded-lg bg-green-100 p-4 text-sm text-green-700 dark:bg-green-200 dark:text-green-800'
-            role='alert'
-          >
-            <span className='mr-1 font-medium'>¡Formulario enviado!</span>
-            Pronto nos contactaremos.
-          </div>
-        </div>
-      )}
+  useEffect(() => {
+    if (status === 'success') {
+      setTimeout(() => {
+        reset()
+      }, 5000)
+    }
+  }, [status, reset])
 
-      {isError && (
-        <div className='mt-6 w-full'>
-          <div
-            className='rounded-lg bg-red-100 p-4 text-sm text-red-700 dark:bg-red-200 dark:text-red-800'
-            role='alert'
-          >
-            <span className='mr-1 font-medium'>
-              ¡Error al enviar el formulario!
-            </span>
-            Por favor inténtalo nuevamente.
-          </div>
-        </div>
-      )}
-    </>
-  )
+  if (alertMessages === null) return null
+
+  return <AlertComponent {...alertMessages} />
 }

@@ -5,6 +5,7 @@ const SENDINBLUE_URL = 'https://api.sendinblue.com/v3/smtp/email'
 const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api/siteverify'
 const RECAPTCHA_SITE_SECRET = process.env.RECAPTCHA_SITE_SECRET
 const MAIL_TO = 'melissa.diaz@usach.cl'
+const MAIL_CC = 'claudia.miranda.z@usach.cl'
 // const MAIL_TO = 'nikosantis@gmail.com'
 
 type BodyType = {
@@ -46,6 +47,11 @@ export async function POST(request: Request) {
         to: [
           {
             email: MAIL_TO,
+          },
+        ],
+        cc: [
+          {
+            email: MAIL_CC,
           },
         ],
         templateId: 2,

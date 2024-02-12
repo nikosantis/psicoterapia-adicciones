@@ -1,17 +1,19 @@
 import { useInput } from '@/lib/hooks/use-input'
 import { cn } from '@/lib/utils'
 import { NameSchema } from '@/lib/validations'
-import { useFormContext } from './form-submit'
+import { useFormStateContext } from './form-context'
 import Input from './input'
 
 export default function Name() {
-  const { isSuccess: isFormSuccess } = useFormContext()
+  const {
+    state: { status },
+  } = useFormStateContext()
   const { inputProps, errors, hasErrors, isSuccess } = useInput({
     baseValue: '',
     type: 'text',
     schema: NameSchema,
     placeholder: 'Escribe aquí tu nombre y apellido',
-    reset: isFormSuccess,
+    reset: status === 'success',
   })
 
   return (

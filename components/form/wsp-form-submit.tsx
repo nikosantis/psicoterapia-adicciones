@@ -20,13 +20,9 @@ type FormTypes = {
   comments: FormValue
 }
 
-type FormSubmitProps = {
-  children: ReactNode
-}
-
 const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
-export default function FormSubmit({ children }: FormSubmitProps) {
+export default function WspFormSubmit({ children }: { children: ReactNode }) {
   const { start, success, validate, exist, error } = useFormDispatchContext()
 
   const handleInput = useCallback(
@@ -37,7 +33,7 @@ export default function FormSubmit({ children }: FormSubmitProps) {
         profession: formData.get('profession') as string,
         email: formData.get('email') as string,
         phone: formData.get('phone') as string,
-        comments: formData.get('comments') as string,
+        comments: (formData.get('comments') as string) || undefined,
       }
       try {
         const vali = await v.safeParseAsync(FormSchema, formElements)
@@ -68,7 +64,6 @@ export default function FormSubmit({ children }: FormSubmitProps) {
                     email: targets.email.value,
                     phone: targets.phone.value,
                     profession: targets.profession.value,
-                    comments: targets.comments.value,
                     token,
                   }),
                 })
@@ -77,6 +72,10 @@ export default function FormSubmit({ children }: FormSubmitProps) {
                 if (response.ok && resJson) {
                   success()
                   sendGTMEvent({ event: 'submitOk' })
+                  window.open(
+                    'https://api.whatsapp.com/send?phone=56961640345',
+                    '_blank',
+                  )
                 } else if (resJson.message === 'Email exist') {
                   exist()
                 } else {
@@ -96,13 +95,14 @@ export default function FormSubmit({ children }: FormSubmitProps) {
     <form
       onSubmit={handleSubmit}
       onInput={handleInput}
-      id='contact-form'
+      id='wsp-form'
       className='transition-all'
     >
       <Script
         src={`https://www.google.com/recaptcha/api.js?render=${reCaptchaKey}`}
         strategy='lazyOnload'
       />
+
       {children}
     </form>
   )

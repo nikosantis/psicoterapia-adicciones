@@ -1,17 +1,19 @@
 import { useInput } from '@/lib/hooks/use-input'
 import { cn } from '@/lib/utils'
 import { EmailSchema } from '@/lib/validations'
-import { useFormContext } from './form-submit'
+import { useFormStateContext } from './form-context'
 import Input from './input'
 
 export default function Email() {
-  const { isSuccess: isFormSuccess } = useFormContext()
+  const {
+    state: { status },
+  } = useFormStateContext()
   const { inputProps, errors, hasErrors, isSuccess } = useInput({
     baseValue: '',
     type: 'email',
     schema: EmailSchema,
     placeholder: 'Escribe aquí tu correo electrónico',
-    reset: isFormSuccess,
+    reset: status === 'success',
   })
 
   return (

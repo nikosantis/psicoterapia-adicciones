@@ -1,17 +1,19 @@
 import { useInput } from '@/lib/hooks/use-input'
 import { cn } from '@/lib/utils'
 import { PhoneSchema } from '@/lib/validations'
-import { useFormContext } from './form-submit'
+import { useFormStateContext } from './form-context'
 import Input from './input'
 
 export default function Phone() {
-  const { isSuccess: isFormSuccess } = useFormContext()
+  const {
+    state: { status },
+  } = useFormStateContext()
   const { inputProps, errors, hasErrors, isSuccess } = useInput({
     baseValue: '',
     type: 'text',
     schema: PhoneSchema,
     placeholder: 'Escribe aquí tu teléfono',
-    reset: isFormSuccess,
+    reset: status === 'success',
   })
 
   return (
