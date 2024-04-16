@@ -33,15 +33,15 @@ export async function POST(request: Request) {
     )
     const reCaptchaJson = await reCaptchaRes.json()
     if (reCaptchaJson && reCaptchaJson.success && reCaptchaJson.score >= 0.5) {
-      await prisma.contact.create({
-        data: {
-          name: body.name,
-          email: body.email,
-          phone: body.phone,
-          profession: body.profession,
-          comment: body.comments,
-        },
-      })
+      // await prisma.contact.create({
+      //   data: {
+      //     name: body.name,
+      //     email: body.email,
+      //     phone: body.phone,
+      //     profession: body.profession,
+      //     comment: body.comments,
+      //   },
+      // })
 
       const emailBody = {
         to: [
