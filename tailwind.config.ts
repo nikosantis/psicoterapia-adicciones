@@ -1,11 +1,12 @@
+import forms from '@tailwindcss/forms'
 import { type Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -76,20 +77,20 @@ const config: Config = {
       },
       keyframes: {
         'slide-down': {
-          '0%': { opacity: '0', transform: 'translateY(-10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          from: { height: '0' },
+          to: { height: 'var(--radix-collapsible-content-height)' },
         },
         'slide-up': {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          from: { height: 'var(--radix-collapsible-content-height)' },
+          to: { height: '0' },
         },
       },
       animation: {
-        'slide-down': 'slide-down 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-        'slide-up': 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-down': 'slide-down 0.2s ease-out',
+        'slide-up': 'slide-up 0.2s ease-out',
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('tailwindcss-radix')()],
+  plugins: [forms],
 }
 export default config
