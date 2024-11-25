@@ -11,11 +11,11 @@ export default function Comments() {
 
   return (
     <div className='block w-full'>
-      <Label htmlFor={`name-${id}`} id={`label-${id}`} className='mb-2'>
+      <Label htmlFor={`comments-${id}`} id={`label-${id}`} className='mb-2'>
         Comentario
       </Label>
       <Textarea
-        id={`comment-${id}`}
+        id={`comments-${id}`}
         placeholder='Puedes escribir aquí algún comentario'
         autoComplete='off'
         aria-labelledby={`label-${id}`}

@@ -1,13 +1,19 @@
 'use client'
 
+import { useTransition } from 'react'
 import Script from 'next/script'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { sendGTMEvent } from '@next/third-parties/google'
+import { CircleXIcon, Loader2Icon } from 'lucide-react'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useReCaptcha } from 'next-recaptcha-v3'
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 
+import { cn } from '@/lib/utils'
 import { formSchema, type FormValues } from '@/lib/validations'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+
+import { sendEmailAction } from './actions'
 
 const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
@@ -16,6 +22,7 @@ export default function WspFormSubmit({
 }: {
   children: React.ReactNode
 }) {
+  const [isPending, startTransaction] = useTransition()
   const formProps = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -23,54 +30,70 @@ export default function WspFormSubmit({
       email: '',
       phone: '',
       profession: '',
-      comments: undefined,
     },
   })
 
-  const { handleSubmit, setError } = formProps
+  const {
+    handleSubmit,
+    setError,
+    reset,
+    formState: {
+      errors: { root },
+    },
+  } = formProps
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    try {
-      if (window && window.grecaptcha) {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha
-            .execute(reCaptchaKey, { action: 'submit' })
-            .then(async (token) => {
-              const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  name: data.name,
-                  email: data.email,
-                  phone: data.phone,
-                  profession: data.profession,
-                  comments: data.comments,
-                  token,
-                }),
+    startTransaction(async () => {
+      try {
+        if (window && window.grecaptcha) {
+          window.grecaptcha.ready(() => {
+            window.grecaptcha
+              .execute(reCaptchaKey, { action: 'submit' })
+              .then(async (token) => {
+                try {
+                  const formData = new FormData()
+                  formData.append('name', data.name)
+                  formData.append('email', data.email)
+                  formData.append('phone', data.phone)
+                  formData.append('profession', data.profession)
+                  formData.append('comments', data.comments || '')
+                  formData.append('token', token)
+                  const result = await sendEmailAction(formData)
+                  if (result.error) {
+                    throw new Error(result.error)
+                  }
+                  sendGTMEvent({ event: 'submitOk' })
+                  reset({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    profession: '',
+                    comments: '',
+                  })
+                  window.open(
+                    'https://api.whatsapp.com/send?phone=56961640345',
+                    '_blank',
+                  )
+                } catch (error) {
+                  console.log('error', error)
+                  setError('root.globalError', {
+                    type: 'manual',
+                    message: 'Error al intentar enviar el formulario',
+                  })
+                }
               })
-
-              const resJson = await response.json()
-              if (response.ok && resJson) {
-                sendGTMEvent({ event: 'submitOk' })
-                window.open(
-                  'https://api.whatsapp.com/send?phone=56961640345',
-                  '_blank',
-                )
-              } else {
-                throw new Error('Error al intentar enviar el formulario')
-              }
-            })
+          })
+        } else {
+          throw new Error('Error al intentar enviar el formulario')
+        }
+      } catch (err) {
+        console.log('err', err)
+        setError('root.globalError', {
+          type: 'manual',
+          message: 'Error al intentar enviar el formulario',
         })
       }
-    } catch (err) {
-      console.error(err)
-      setError('root.globalError', {
-        type: 'manual',
-        message: 'Error al intentar enviar el formulario',
-      })
-    }
+    })
   }
 
   return (
@@ -84,7 +107,39 @@ export default function WspFormSubmit({
           src={`https://www.google.com/recaptcha/api.js?render=${reCaptchaKey}`}
           strategy='lazyOnload'
         />
-        <div className='flex flex-col'>{children}</div>
+        <div className='flex flex-col gap-y-4'>
+          {children}
+          <div className='w-full'>
+            <button
+              type='submit'
+              disabled={isPending}
+              className={cn(
+                'select-none rounded bg-u-orange-primary-500 px-3 py-2 text-center font-medium text-white transition-all hover:bg-u-orange-primary-700',
+                'disabled:pointer-events-none disabled:cursor-not-allowed disabled:select-none disabled:bg-u-orange-primary-500/40',
+                'inline-flex',
+              )}
+            >
+              {isPending ? (
+                <>
+                  <Loader2Icon className='mr-2 size-4 animate-spin' />
+                  <span>Enviando...</span>
+                </>
+              ) : (
+                <span>Enviar</span>
+              )}
+            </button>
+          </div>
+
+          {root?.globalError && (
+            <Alert title='Error al enviar el formulario' variant='destructive'>
+              <CircleXIcon className='size-4' />
+              <AlertTitle>Error al enviar el formulario</AlertTitle>
+              <AlertDescription>
+                Por favor, intenta nuevamente.
+              </AlertDescription>
+            </Alert>
+          )}
+        </div>
       </form>
     </FormProvider>
   )

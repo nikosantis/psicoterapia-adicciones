@@ -46,3 +46,12 @@ export const formSchema = z.object({
 })
 
 export type FormValues = z.output<typeof formSchema>
+
+export const sendEmailActionSchema = z.object({
+  name: nameSchema,
+  email: emailSchema,
+  phone: phoneSchema,
+  profession: professionSchema,
+  comments: MessageSchema,
+  token: z.string(),
+})
