@@ -3,6 +3,7 @@
 import Script from 'next/script'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { sendGTMEvent } from '@next/third-parties/google'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useReCaptcha } from 'next-recaptcha-v3'
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 
@@ -59,6 +60,7 @@ export default function FormSubmit({
         })
       }
     } catch (err) {
+      console.error(err)
       setError('root.globalError', {
         type: 'manual',
         message: 'Error al intentar enviar el formulario',
