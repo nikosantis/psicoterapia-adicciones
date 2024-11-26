@@ -47,6 +47,9 @@ export async function sendEmailAction(formData: FormData) {
           {
             email: MAIL_CC,
           },
+          {
+            email: 'tamara.silva@usach.cl',
+          },
         ],
         templateId: 2,
         params: {
