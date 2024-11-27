@@ -66,11 +66,7 @@ export default function Intro() {
           <IntroElement
             icon={<MdLaptopMac fontSize='30' color='#fff' />}
             title='Modalidad'
-            content={
-              <p>
-                En línea con clases sincrónicas y exigencia de cámara encendida
-              </p>
-            }
+            content={<p>En línea con clases sincrónicas</p>}
           />
           <IntroElement
             icon={<FiCalendar fontSize='30' color='#fff' />}
@@ -83,7 +79,8 @@ export default function Intro() {
             content={
               <>
                 <p>Asistencia mínima 75%</p>
-                <p>Nota aprobación: 4.0 </p>
+                <p>Nota aprobación: 4.0</p>
+                <p>Cámara encendida</p>
               </>
             }
           />
