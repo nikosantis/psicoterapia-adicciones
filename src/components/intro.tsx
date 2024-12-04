@@ -9,7 +9,11 @@ import IntroElement from '@/components/intro-element'
 export default function Intro() {
   const { aboutRef } = useScroll()
   return (
-    <section className='relative bg-white py-24' ref={aboutRef}>
+    <section
+      className='relative scroll-mt-12 bg-white py-24'
+      ref={aboutRef}
+      id='intro'
+    >
       <div className='z-20 mx-auto mb-16 flex w-full max-w-7xl justify-center px-4 sm:px-6 lg:px-8 xl:flex-row'>
         <div className='w-full xl:w-7/12'>
           <h5 className='relative mb-2 text-center text-xl font-light uppercase text-zinc-700'>

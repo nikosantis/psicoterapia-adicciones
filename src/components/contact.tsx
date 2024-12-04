@@ -7,7 +7,11 @@ import ContactForm from './contact-form'
 export default function Contact() {
   const { contactRef } = useScroll()
   return (
-    <section className='relative py-24' ref={contactRef}>
+    <section
+      className='relative scroll-mt-12 py-24'
+      ref={contactRef}
+      id='contacto'
+    >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-wrap'>
           <div className='mb-6 w-full'>

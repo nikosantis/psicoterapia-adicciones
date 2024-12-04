@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.grecaptcha-badge {
-  @apply z-[1000];
+@layer base {
+  body {
+    @apply scroll-smooth;
+  }
+
+  .grecaptcha-badge {
+    @apply z-[1000];
+  }
 }

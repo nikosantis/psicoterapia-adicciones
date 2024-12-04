@@ -6,7 +6,11 @@ export default function Modules() {
   const { modulesRef } = useScroll()
 
   return (
-    <section className='relative bg-zinc-100 py-24' ref={modulesRef}>
+    <section
+      className='relative scroll-mt-12 bg-zinc-100 py-24'
+      ref={modulesRef}
+      id='modulos'
+    >
       <div className='w-ful z-20 mx-auto mb-16 flex max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8 xl:flex-row xl:flex-wrap'>
         <div className='mb-12 w-full'>
           <h2 className='text-center text-4xl font-medium'>

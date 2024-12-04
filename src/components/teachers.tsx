@@ -12,7 +12,7 @@ import Avatar from '@/components/avatar'
 export default function Teachers() {
   const { teachersRef } = useScroll()
   return (
-    <section className='py-24' ref={teachersRef}>
+    <section className='scroll-mt-12 py-24' ref={teachersRef} id='profesores'>
       <div className='mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8'>
         <div className='grid w-full grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3'>
           <div className='flex'>

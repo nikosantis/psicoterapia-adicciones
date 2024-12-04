@@ -7,7 +7,11 @@ import { useScroll } from '@/lib/contexts/scroll'
 export default function Prices() {
   const { pricesRef } = useScroll()
   return (
-    <section className='bg-zinc-200 py-24' ref={pricesRef}>
+    <section
+      className='scroll-mt-12 bg-zinc-200 py-24'
+      ref={pricesRef}
+      id='arancel'
+    >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='grid w-full items-center justify-center gap-x-6 gap-y-8 lg:grid-cols-3'>
           <div className='flex flex-col items-center justify-start text-center'>
